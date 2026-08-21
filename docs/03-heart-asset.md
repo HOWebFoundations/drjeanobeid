@@ -11,23 +11,10 @@
 
 ### Why not a real-time 3D hero by default
 
-Two objections, both [Likely]:
-
-1. **Performance.** A real-time 3D hero is the single largest threat to a site whose
-   visitors mostly arrive on phones over uneven Lebanese mobile networks. A hero that stalls
-   on a weak connection loses the patient to Vezeeta before the page paints.
-2. **Anatomical accuracy.** An AI-generated mesh will contain errors a cardiologist spots in
-   seconds — vessel topology, chamber proportions, coronary routing. Shipping one as the
-   hero of his own site is a credibility failure in front of exactly the audience whose
-   trust the site exists to earn.
-
-Pre-rendering solves both: the anatomy is frozen at a frame we have reviewed, and the
-delivery cost is a video file.
-
-### Why not generate the rotation directly as AI video
-
-[Likely] a generated 360° rotation drifts anatomically mid-turn and rarely loops cleanly.
-Keep AI video as a fallback for a **short cinematic intro clip**, not for the hero loop.
+[Likely] a real-time 3D hero is the single largest threat to a site whose visitors mostly
+arrive on phones over uneven Lebanese mobile networks. A hero that stalls on a weak
+connection loses the patient to Vezeeta before the page paints. Pre-rendering turns the
+delivery cost into a video file and freezes the anatomy at a frame we have reviewed.
 
 ### What justifies the interactive version at all
 
@@ -46,17 +33,40 @@ navigation — an anatomically-indexed entry point into the SEO content.
 
 ---
 
-## Production pipeline
+## Sourcing: licensed model, not AI generation
 
-Runs in parallel with Weeks 2–3 of the build. **Preflight cost before every generation job**
-— and confirm the Higgsfield balance exists at all before planning around it (see Diligence).
+[Decided] the Higgsfield credits are gone, so the AI-generation route is off the table.
 
-### Step 1 — Reference stills
+**This is a net improvement, not a setback.** The entire two-failed-reviews stop rule
+existed because AI-generated meshes reliably contain anatomical errors — wrong vessel
+topology, distorted chamber proportions, coronaries routed through the wrong grooves — the
+kind of thing a cardiologist spots in seconds on his own website. Buying a professionally
+made anatomical model removes that failure mode completely. We skip generation and go
+straight to cleanup and integration.
 
-Generate anterior, posterior, left, and right views with the 4K image model. Neutral studio
-light, plain background.
+### Where to source
 
-Include an **explicit anatomy checklist in the prompt**:
+| Source | Licence | Note |
+| --- | --- | --- |
+| **TurboSquid / Sketchfab / CGTrader medical models** | Paid, royalty-free | **Recommended.** Typically modest cost. Cleanest commercial licence, best geometry. |
+| Z-Anatomy | Open, attribution (check current terms) | Free and genuinely accurate, but [Likely] share-alike — verify whether that encumbers derivative renders on a commercial site. |
+| NIH 3D Print Exchange | Mostly public domain, varies per model | Free. Many models are print-oriented, so topology may need more cleanup. |
+| BodyParts3D / Anatomography | Attribution, share-alike | Same share-alike caution as Z-Anatomy. |
+
+**Recommendation: buy a royalty-free medical-grade model.** The cost is trivial against the
+project, the licence is unambiguous for commercial use, and it sidesteps the share-alike
+question entirely. Verify before purchase that the licence permits commercial web
+distribution and that the model is anatomically accurate rather than stylised — a lot of
+marketplace "hearts" are decorative valentine geometry with a medical thumbnail.
+
+### Review the shortlist *before* buying
+
+Send Dr. Obeid three or four candidate models as the marketplace's own preview turntables
+and ask him to pick. This is cheap, takes him five minutes, catches accuracy problems before
+any money or Blender time is spent, and makes him a participant in the signature asset
+rather than a reviewer of a fait accompli.
+
+His checklist — the things a cardiologist will look at first:
 
 - Aortic arch with its three branches
 - Pulmonary trunk bifurcation
@@ -68,17 +78,16 @@ Include an **explicit anatomy checklist in the prompt**:
 - Apex pointing left-anterior-inferior
 - Right ventricle wrapping anteriorly
 
-Save the best anterior image as a **reference element** to hold consistency across the other
-three views.
+---
 
-### Step 2 — Multi-image to 3D
+## Production pipeline
 
-Use the multi-image-to-3D route with **2–4 views**. [Certain, per the tool's own
-documentation] this gives better geometric accuracy than single-image conversion. PBR
-texturing on.
+Runs in parallel with the design and copy weeks.
 
-### Step 3 — Blender cleanup
+### Step 1 — Shortlist and licence check
+Three or four candidates, licence terms verified for commercial web use, doctor picks one.
 
+### Step 2 — Purchase and Blender cleanup
 - Decimate to ~150k triangles
 - Fix normals
 - Bake textures at 2K
@@ -86,41 +95,37 @@ texturing on.
 - Compress with `gltf-transform` — meshopt or Draco, KTX2 textures
 - **Target: under 3 MB total**
 
-### Step 4 — Doctor review gate
+### Step 3 — Doctor confirmation
+Annotated turntable frames of the cleaned model. This is now a **verification** step rather
+than an iteration loop, and should pass first time given the model was chosen at Step 1.
+If it does not, return to the shortlist rather than trying to fix anatomy in Blender.
 
-Present annotated turntable frames. He marks anatomical errors directly on the frames.
-
-**Stop rule: if the mesh fails his review twice, stop iterating and switch to a licensed or
-open anatomical model.** Two failed rounds means the generation approach is not converging,
-and a third round is sunk cost against a fixed deadline.
-
-Fallback sources ([Likely], check license terms either way):
-- Z-Anatomy and the NIH 3D Print Exchange — usable heart models under attribution licenses
-- TurboSquid or Sketchfab medical models — paid route
-
-### Step 5 — Turntable render
-
+### Step 4 — Turntable render
 Blender. 8–10 seconds, 30 fps, 1080² and 720². Encode to WebM and MP4, with a WebP poster.
 
-Optionally a 90-frame WebP sprite sequence if we want scroll-scrubbing. Decide this only
-after the performance budget is measured, not before.
+Optionally a 90-frame WebP sprite sequence for scroll-scrubbing — decide only after the
+performance budget is measured, not before.
 
-### Step 6 — Integration
-
+### Step 5 — Integration
 - Muted, looping, `playsinline` video
 - **The poster is the LCP image** — this is what keeps the hero fast
 - Reduced-motion users get the poster only, never the video
 - Desktop pointer devices swap in the R3F viewer on idle, via dynamic import
 
+### Step 6 — Derive the line mark
+Extract a simplified single-colour line mark from the model for the favicon, OG image and
+brand motif. This is what makes the asset pay back beyond the hero.
+
 ---
 
 ## Acceptance criteria
 
+- [ ] Licence verified for commercial web use, attribution recorded if required
 - [ ] Doctor sign-off on anatomy
 - [ ] Loop is seamless
 - [ ] Poster under 100 KB
-- [ ] 3D chunk absent from the initial bundle (verify in the bundle analyzer, not by eye)
+- [ ] 3D chunk absent from the initial bundle (verify in the bundle analyser, not by eye)
 - [ ] 60 fps on a mid-range laptop
 - [ ] Hotspots keyboard-accessible
-- [ ] Meaningful alt text
+- [ ] Meaningful alt text, in all three locales
 - [ ] Hero does not regress the LCP budget on throttled 4G
