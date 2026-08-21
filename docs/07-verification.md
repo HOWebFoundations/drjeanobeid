@@ -46,7 +46,13 @@ is the authoritative Lebanese register, with the common name as an `alternateNam
 the detail that keeps the GBP pins out of the hospitals' own listings, and only he can
 supply it. **Diligence items 18 and 19 remain open.**
 
-## 3. He may be interventional after all — CONTRADICTION
+## 3. He may be interventional after all — CONTRADICTION → **RESOLVED: he is**
+
+> **Update.** The client has confirmed **he is interventional**. The public sources were
+> right and the earlier answer was wrong. Angiography and angioplasty pages are back in the
+> content inventory. The remaining precision — diagnostic angiography only, or PCI and
+> stenting too, and in which cath lab — is a Session 2 interview question.
+> The analysis below is kept as the record of how it surfaced.
 
 You told me **not interventional, clinical and diagnostic only**, and I dropped the
 angiography and angioplasty pages on that basis.

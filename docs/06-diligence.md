@@ -7,11 +7,11 @@
 | 1 | Client identity | **Dr. Jean Obeid, cardiologist** |
 | 2 | Practice locations | **Geitaoui and Karantina hospitals.** No private clinic |
 | 3 | Higgsfield access | **Credits gone / cancelled** → licensed or purchased anatomical model instead |
-| 4 | Interventional? | **No** per the client — but ⚠️ **public sources contradict this**, see open item 28. Content stays non-interventional pending resolution |
+| 4 | Interventional? | **Yes** — confirmed, correcting an earlier answer. Angiography and angioplasty pages restored. 16 medical pages |
 | 5 | Appointment handling | **Phone and WhatsApp, secretary books manually** → no booking engine |
 | 6 | Languages | **EN + FR + AR, all three at launch** |
 | 7 | Source language | **English.** Full medical review in EN, then translate |
-| 8 | Review model | **Review substance once, then translate** — 14 full reviews, not 42 |
+| 8 | Review model | **Review substance once, then translate** — 16 full reviews, not 48 |
 | 9 | Advertising rules | **Write conservatively, don't ask.** Strictest reading; no review solicitation |
 | 10 | Retainer | **No** → MDX only, no Sanity, articles front-loaded, real handover |
 | 11 | Existing site | **Domain owned, no real site** → no redirect work |
@@ -37,12 +37,12 @@ See `07-verification.md` for sources.
 
 | # | Question | Blocks | Priority |
 | --- | --- | --- | --- |
-| 28 | ⚠️ **Is he interventional?** His LinkedIn headline says "interventional cardiologist"; you said clinical and diagnostic only. Geitaoui's own listing says neither | Two service pages, and whether the site understates his practice. Also: if he is not, his LinkedIn misrepresents him | **Top — blocks copy** |
+| 28 | **Exactly which interventional procedures, and where?** Diagnostic angiography only, or PCI and stenting too? Which cath lab, at which hospital? | The two procedure pages' accuracy and scope | **High — Session 2** |
 | 29 | **Department, floor or suite** at each hospital | Keeps the two GBP pins out of the hospitals' own listings | High |
 | 30 | Is he affiliated with **Haddad / Sœurs du Rosaire Hospital**, as one directory claims? | A possible third location, or a stale listing to correct | Medium |
 | 31 | Will he publish as **"Jean Habib Obeid"** or with a middle initial? | Strong, free disambiguation from the politician | Medium |
-| 32 | **Keyword volumes** — Ahrefs plan lacks API access, Semrush unauthorised | The Week 1 keyword map has no data behind it | High — needs a plan upgrade or Semrush authorisation |
-| 17 | **What is the domain?** He owns one — which is it, and is there any history worth checking? | DNS, hosting setup, launch. Also whether a better name-based domain is worth registering | High |
+| 32 | **Keyword volumes** — Ahrefs plan lacks API access | The Week 1 keyword map has no data behind it | **Semrush authorisation in progress.** Pull volumes once it lands |
+| 17 | ~~What is the domain?~~ | **Closed: `drjeanobeid.com`** | ✅ |
 | 18 | **Exact legal names and addresses** of both hospitals, including department/floor | Schema, both GBP listings, every directory profile. Must match character-for-character | High |
 | 19 | **Session hours at each location** | With a shared phone number, hours are the only thing distinguishing the two GBP listings. Also the location pages' main differentiator | High |
 | 20 | **Cross-border teleconsultation legality** — can he consult patients resident in the EU and Gulf, or second opinions only? | How the teleconsultation page describes the service. Write it as second-opinion/report-review until confirmed | High — before that page goes live |
@@ -68,7 +68,7 @@ See `07-verification.md` for sources.
 | **Anatomical inaccuracy** | Low now | Credibility failure | Largely resolved: licensed medical-grade model, chosen by him from a shortlist before purchase |
 | **Directories outrank us on head terms** | Near-certain | Only a problem if we promised otherwise | Do not promise head terms. Own *qualified* branded queries and the 42 evergreen long-tail pages. Mitigated by verification: their index is thin, ~19–21 cardiologists nationally |
 | **Namesake collision with a former foreign minister** | [Certain] present | Bare-name branded search is unwinnable; entity confusion in Google's knowledge graph | Distinguishing name form everywhere; a "dr"/"cardiology" domain; `Physician` schema and `sameAs` treated as core strategy, not hygiene |
-| **Scope misstatement on interventional cardiology** | Unresolved | Either understates his practice by two high-value pages, or leaves an inaccurate public claim standing under a conservative advertising stance | Resolve item 28 before any copy is written |
+| **Outcome claims creep into the interventional pages** | Medium | Regulatory exposure he carries personally, under the conservative stance | No success rates, case volumes, or comparative results. Describe the procedure and who it is for. Flagged in the Session 2 script and in the editorial rules |
 | **No directory profiles to convert** | [Certain] | The feeder strategy has nothing to feed from at launch | Create Vezeeta and DRAPP profiles during the build, with canonical NAP, live before launch |
 | **Site decays after handover** with no retainer | High over 12+ months | Gradual ranking and accuracy loss | Front-load durable content; honest handover note on what decays; analytics readable without us |
 | **GDPR exposure** via diaspora targeting | [Likely] applies | Compliance | Cookie consent, privacy policy in all three locales, no health data in forms |

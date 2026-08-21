@@ -24,8 +24,8 @@ the heart, it is optimising for the wrong thing.
 | Locations | Geitaoui + Karantina hospitals, no private clinic | Two location pages, two GBP listings, practitioner-inside-hospital setup |
 | Languages | **EN + FR + AR, all three at launch** | Timeline 9 → 11 weeks; RTL from the first component |
 | Source language | Draft in **English** | Full medical review in EN, then translate |
-| Review model | **Review substance once, then translate** | 14 medical pages fully reviewed, not 42 |
-| Interventional? | **No** — clinical and diagnostic only | Angiography/angioplasty pages dropped |
+| Review model | **Review substance once, then translate** | 16 medical pages fully reviewed, not 48 |
+| Interventional? | **Yes** — confirmed, correcting an earlier answer | Angiography + angioplasty pages in. 16 medical pages, not 14 |
 | Booking | Phone + WhatsApp, secretary books manually | **No booking engine.** Sticky bar + lightweight request form |
 | Phone | **One secretary, one number for both hospitals** | Sticky bar is unambiguous everywhere; distinct hours differentiate the two GBP listings |
 | Root locale | **English at root**, `/fr` and `/ar` | `x-default` points at the root |
@@ -35,6 +35,7 @@ the heart, it is optimising for the wrong thing.
 | CMS | **No retainer → MDX only** | No Sanity. Articles front-loaded, not dripped |
 | Advertising rules | **Write conservatively, don't ask** | Strictest reading: no superlatives, testimonials, comparisons, pricing |
 | Existing site | Domain owned, no real site | **No redirect work** |
+| Domain | **drjeanobeid.com** | Disambiguates from the politician of the same name |
 | Photography | Existing professional photos | Assess coverage, top-up shoot if gaps |
 
 ## Documents
@@ -48,6 +49,8 @@ the heart, it is optimising for the wrong thing.
 | [`docs/05-delivery-plan.md`](docs/05-delivery-plan.md) | Eleven weeks, gates, review windows, handover |
 | [`docs/06-diligence.md`](docs/06-diligence.md) | Resolved decisions and remaining open questions |
 | [`docs/07-verification.md`](docs/07-verification.md) | Desk research against public sources — what checked out, what did not |
+| [`docs/08-discovery-interview.md`](docs/08-discovery-interview.md) | Scripts for the two 60-minute sessions with Dr. Obeid |
+| [`docs/09-client-questionnaire.md`](docs/09-client-questionnaire.md) | Self-serve form for the facts that don't need a conversation |
 
 ## Confidence tagging
 
@@ -64,8 +67,8 @@ difference between a decision we can act on and one we still need to verify.
 
 Pre-discovery, but most of the scope is now settled. The next action is the Week 1
 interview and closing the short list of remaining questions in `docs/06-diligence.md` —
-principally **whether he is interventional** — public sources contradict what we were told —
-plus the domain name, the department-level detail at each hospital, and the session hours.
+The interview scripts in `08` and `09` are built to close the remaining open items in one
+sitting. Keyword volumes stay blocked until Semrush is authorised.
 
 See [`docs/07-verification.md`](docs/07-verification.md) for what independent checking
 confirmed and what it overturned. Two premises changed: the branded-search play needs

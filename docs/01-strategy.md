@@ -69,8 +69,8 @@ planning to is how the branded-search budget gets wasted. Three consequences:
   "Jean Obeid" — in the site title, schema `name`, both GBP listings, and every directory.
   One directory lists him as **Jean Habib Obeid**; if he is willing to publish under a middle
   name or initial, that disambiguates strongly and costs nothing.
-- **A domain containing "dr" or "cardiology"** disambiguates where a bare-name domain would
-  compete with the politician.
+- [Decided] **the domain is `drjeanobeid.com`** — carries the "dr" disambiguator and the
+  full first name people actually search. Matches the repository name.
 - **Entity markup moves from hygiene to core strategy.** `Physician` schema, both GBP
   listings and the `sameAs` graph are the mechanism by which Google separates him from the
   politician. This is now one of the highest-leverage technical items on the project.
@@ -103,6 +103,23 @@ locales are **tuned, not merely translated**. Tone, reading level, examples and 
 adapt to the audience. Medical substance does not — that stays identical across all three
 and is reviewed once. Keeping that boundary sharp is what preserves the eleven-week
 timeline.
+
+### Interventional practice is the differentiator
+
+[Decided] he is interventional. This is a stronger position than the earlier read assumed.
+
+A general cardiologist competes with every other name on Vezeeta's short list. A cardiologist
+who performs coronary angiography and angioplasty answers a different, higher-intent
+question — and the procedure queries behind it are commercially weighted, poorly served by
+the directories, and directly connected to the condition pages through the heart hotspots.
+
+The coronary artery disease page, the angiography page and the angioplasty page should be
+built as a deliberate cluster with strong internal linking. That cluster is the highest-value
+real estate on the site.
+
+Constraint: under the conservative advertising stance, no outcome claims, no success rates,
+no case volumes, no comparisons. Describe the procedure and who it is for — nothing about
+how well he does it.
 
 ### Trust content does the heavy lifting
 
@@ -142,7 +159,7 @@ single largest reason the timeline moves from nine weeks to eleven. The build co
 third language is small; the *content* cost is not.
 
 The mitigation is the review model — see `02-content-inventory.md`. We draft and fully
-review in English, then translate. That keeps his review load at 14 medical pages rather
+review in English, then translate. That keeps his review load at 16 medical pages rather
 than 42.
 
 Arabic gets specific attention: RTL layout from the first component rather than

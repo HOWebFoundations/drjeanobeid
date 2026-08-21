@@ -1,6 +1,6 @@
 # 02 — Content inventory
 
-Roughly **25 pages per locale, ~75 URLs total** across EN, FR and AR. Of these, **14 are
+Roughly **27 pages per locale, ~81 URLs total** across EN, FR and AR. Of these, **16 are
 medical pages requiring full substance review** by Dr. Obeid.
 
 ## Sitemap
@@ -31,13 +31,30 @@ Valve disease · Cholesterol · Chest pain evaluation · Palpitations · Syncope
 8. Emergency notice
 9. Author byline + medically-reviewed-by line with date + cited sources
 
-### Tests and procedures — one page each (5)
+### Tests and procedures — one page each (7)
 
-ECG · Echocardiogram · Stress test · Holter and event monitoring · Cardiac risk assessment
+**Diagnostic (5):** ECG · Echocardiogram · Stress test · Holter and event monitoring ·
+Cardiac risk assessment
 
-[Decided] **he is not interventional** — clinical and diagnostic only. Angiography and
-angioplasty pages are dropped. We do not write about procedures he does not perform, even
-as traffic bait: it misrepresents his services and produces exactly the wrong enquiries.
+**Interventional (2):** Coronary angiography · Angioplasty and stenting
+
+[Decided] **he is interventional** — corrected from the earlier answer, and consistent with
+his LinkedIn headline and with what independent verification found. The angiography and
+angioplasty pages are back in.
+
+These two are strategically the most valuable pages on the site. They are high-intent and
+commercially weighted: someone searching "angioplasty Beirut" or "قسطرة القلب" is far
+further down the decision path than someone searching "chest pain". They are also what
+distinguishes him from a general cardiologist, and neither Vezeeta nor DRAPP answers them
+in any depth.
+
+Two constraints on how they are written, both from the conservative advertising stance:
+
+- **No outcome or success-rate claims**, no volume figures, no comparative statements about
+  his results. Describe the procedure, who it is for, what to expect, and recovery.
+- **Be precise about what he actually performs and where.** Diagnostic angiography and PCI
+  are different scopes, and the cath lab he uses is a fact patients need. Nailed down in the
+  Session 2 interview.
 
 ### Patient information
 First visit, preparation per test, insurance and payment, what to bring.
@@ -80,8 +97,8 @@ The original plan made articles the SEO engine, fed by a retainer. With no retai
 engine has no fuel and planning a two-a-month drip that nobody is paid to write is
 self-deception.
 
-**The 14 condition and test pages are the SEO engine instead.** Across three locales that
-is 42 pages of evergreen, high-intent, long-tail content — which is genuinely enough to win
+**The 16 condition and procedure pages are the SEO engine instead.** Across three locales
+that is 48 pages of evergreen, high-intent, long-tail content — which is genuinely enough to win
 the queries the directories ignore. Evergreen medical explainers also age far better than
 topical articles.
 
@@ -125,8 +142,10 @@ word, and worth it.
 ### Workflow
 
 ```
-1. HOWF drafts 14 medical pages in EN, from the two 60-minute interviews
+1. HOWF drafts 16 medical pages in EN, from the two 60-minute interviews
 2. Dr. Obeid reviews and signs off the MEDICAL SUBSTANCE in EN  ← the critical path
+   (the two interventional pages need the closest reading — procedural accuracy
+    and no implied outcome claims)
 3. Approved EN pages go to transcreation (FR, AR) with the audience brief
 4. Transcreations get a TERMINOLOGY + SUBSTANCE-DRIFT check — has any clinical
    claim changed? — by a medical translator, not a fresh review from him
@@ -137,7 +156,7 @@ Step 4 is doing more work than it was. The substance-drift check is the safeguar
 per-locale tuning compatible with a single medical sign-off, so it is not optional and it is
 not something a general translator can do.
 
-This cuts his review load from 42 pages to 14 full reviews plus a light FR pass. It is the
+This cuts his review load from 48 pages to 16 full reviews plus a light FR pass. It is the
 difference between an eleven-week project and a five-month one.
 
 **Arabic needs a human medical translator.** Not machine translation, not a general

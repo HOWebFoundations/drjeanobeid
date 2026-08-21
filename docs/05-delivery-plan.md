@@ -8,7 +8,9 @@ before Week 1 closes.
 
 ## Week 1 — Discovery
 
-- Doctor interview, first of two structured 60-minute sessions
+- **Send `09-client-questionnaire.md` three days before Session 1.** Facts collected in
+  writing are interview minutes saved, and interview minutes are the scarcest resource here
+- Doctor interview, Session 1 (`08-discovery-interview.md`)
 - Access: domain, DNS, hosting, Google Business Profile (both locations), analytics
 - Directory audit: Vezeeta, DRAPP, both hospital staff pages, any others
 - Keyword map in **all three languages**
@@ -24,7 +26,10 @@ before Week 1 closes.
 ## Weeks 2–4 — Design and English copy
 
 - Information architecture
-- **English copy drafts, all 14 medical pages** (second doctor interview feeds this)
+- Doctor interview, Session 2 — the medicine
+- **English copy drafts, all 16 medical pages.** Session 2 covers the first visit, four
+  anchor conditions and both interventional procedures live; the remaining five conditions
+  come from the written follow-up template
 - Design system + four key screens: home, condition, location, contact
 - Photography gap assessment → book a top-up shoot if needed
 - Heart model purchased, Blender cleanup, doctor confirmation
@@ -91,7 +96,7 @@ the copy drafting — the waiting.
 
 Mitigations now in place:
 
-- **Review substance once, in English.** 14 full reviews instead of 42. This is the single
+- **Review substance once, in English.** 16 full reviews instead of 48. This is the single
   biggest schedule saver in the plan.
 - Five-business-day review windows per gate, agreed up front
 - Medical pages sent progressively from Week 5, never as one Week-10 block
