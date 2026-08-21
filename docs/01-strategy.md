@@ -32,18 +32,50 @@ Lebanese cardiologist search is dominated by **Vezeeta** and **DRAPP**. [Likely]
 will not displace them on head terms like "cardiologist Beirut" within months, and planning
 as if it will is how the SEO budget gets wasted.
 
+But they are thinner than assumed. [Certain] Vezeeta lists only around **11 cardiologists in
+Beirut and roughly 19–21 in all of Lebanon** — they dominate through domain authority, not
+depth or quality of content. That is exactly the weakness the long-tail condition and test
+pages exist to exploit. Cannot beat them on head terms; can comprehensively out-answer them
+on everything else.
+
 The play is three-part:
 
-1. **Own the branded query completely** — "Jean Obeid" in every spelling and
-   transliteration: Latin, Arabic (جان عبيد), French, and the common misspellings
-   (Obeid / Obaid / Oubeid / Abeid). This is winnable immediately and it is where the
-   highest-intent traffic already is.
+1. **Own the *qualified* branded query.** Not the bare name — see the namesake problem
+   below. Target "Dr Jean Obeid cardiologist", "Dr Jean Obeid Geitaoui", "Docteur Jean Obeid
+   cardiologue", "دكتور جان عبيد طبيب قلب", across the common misspellings
+   (Obeid / Obaid / Oubeid / Abeid). Still winnable, still the highest-intent traffic, but a
+   narrower target than originally scoped.
 2. **Win the long-tail condition and procedure questions** the directories do not answer.
    Directory profiles are listings; they do not explain what an echocardiogram involves or
    when chest pain warrants a cardiologist.
-3. **Turn the directory profiles into feeders.** Identical name, address, and phone across
-   every profile, each linking back. We do not fight the directories, we convert their
-   traffic.
+3. **Create the directory profiles, then turn them into feeders.** Verification found
+   [Certain] **no Vezeeta or DRAPP profile for him at all** — his only real public presence
+   is LinkedIn and the Geitaoui staff listing. So this is a build task, not an alignment
+   task: create the profiles, populate them with the canonical NAP, link them back. Larger
+   than planned, and it has to happen before launch so the entity signals are consistent
+   from day one.
+
+### The namesake problem
+
+[Certain] **"Jean Obeid" was a prominent Lebanese politician** — MP, Minister of Education,
+and Foreign Minister of Lebanon 2003–2004, a presidential candidate in 2008 and 2014, who
+died in February 2021. He has a Wikipedia article and extensive obituary coverage. There is
+also **Dr Mounir Obeid**, a heart surgeon at AUBMC.
+
+We will not outrank a former foreign minister's Wikipedia entry on the bare name, and
+planning to is how the branded-search budget gets wasted. Three consequences:
+
+- **Use a distinguishing name form everywhere.** "Dr Jean Obeid, Cardiologist" — never bare
+  "Jean Obeid" — in the site title, schema `name`, both GBP listings, and every directory.
+  One directory lists him as **Jean Habib Obeid**; if he is willing to publish under a middle
+  name or initial, that disambiguates strongly and costs nothing.
+- **A domain containing "dr" or "cardiology"** disambiguates where a bare-name domain would
+  compete with the politician.
+- **Entity markup moves from hygiene to core strategy.** `Physician` schema, both GBP
+  listings and the `sameAs` graph are the mechanism by which Google separates him from the
+  politician. This is now one of the highest-leverage technical items on the project.
+
+Full detail and sources in `07-verification.md`.
 
 ### The two-location situation
 

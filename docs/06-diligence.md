@@ -7,7 +7,7 @@
 | 1 | Client identity | **Dr. Jean Obeid, cardiologist** |
 | 2 | Practice locations | **Geitaoui and Karantina hospitals.** No private clinic |
 | 3 | Higgsfield access | **Credits gone / cancelled** → licensed or purchased anatomical model instead |
-| 4 | Interventional? | **No** — clinical and diagnostic only. Angiography/angioplasty dropped |
+| 4 | Interventional? | **No** per the client — but ⚠️ **public sources contradict this**, see open item 28. Content stays non-interventional pending resolution |
 | 5 | Appointment handling | **Phone and WhatsApp, secretary books manually** → no booking engine |
 | 6 | Languages | **EN + FR + AR, all three at launch** |
 | 7 | Source language | **English.** Full medical review in EN, then translate |
@@ -21,10 +21,27 @@
 | 15 | Teleconsultation | **Yes** — diaspora and remote patients. Page stays, GDPR confirmed |
 | 16 | Patient mix | **Genuinely different between the two hospitals** → transcreation per locale, clinical substance fixed |
 
+## Closed by independent verification
+
+See `07-verification.md` for sources.
+
+| # | Item | Result |
+| --- | --- | --- |
+| 27 | Red Cross emergency number | [Certain] **140 confirmed.** Also Civil Defence 125, Fire 175, Police 112 |
+| 18a | Hospital identities | Both located in the MOPH register. **Canonical name must be chosen per hospital** — each appears under three or four variants across MOPH, its own site, and directories |
+| — | Directory audit | [Certain] **no Vezeeta or DRAPP profile exists.** They must be created, not aligned — see strategy doc |
+| — | Competitive depth | [Certain] Vezeeta lists ~11 cardiologists in Beirut, ~19–21 in Lebanon. Thin index; they win on authority, not content |
+| — | Branded search | [Certain] **a former Lebanese foreign minister shares his name.** Bare-name queries are unwinnable; target qualified branded queries instead |
+
 ## Still open
 
 | # | Question | Blocks | Priority |
 | --- | --- | --- | --- |
+| 28 | ⚠️ **Is he interventional?** His LinkedIn headline says "interventional cardiologist"; you said clinical and diagnostic only. Geitaoui's own listing says neither | Two service pages, and whether the site understates his practice. Also: if he is not, his LinkedIn misrepresents him | **Top — blocks copy** |
+| 29 | **Department, floor or suite** at each hospital | Keeps the two GBP pins out of the hospitals' own listings | High |
+| 30 | Is he affiliated with **Haddad / Sœurs du Rosaire Hospital**, as one directory claims? | A possible third location, or a stale listing to correct | Medium |
+| 31 | Will he publish as **"Jean Habib Obeid"** or with a middle initial? | Strong, free disambiguation from the politician | Medium |
+| 32 | **Keyword volumes** — Ahrefs plan lacks API access, Semrush unauthorised | The Week 1 keyword map has no data behind it | High — needs a plan upgrade or Semrush authorisation |
 | 17 | **What is the domain?** He owns one — which is it, and is there any history worth checking? | DNS, hosting setup, launch. Also whether a better name-based domain is worth registering | High |
 | 18 | **Exact legal names and addresses** of both hospitals, including department/floor | Schema, both GBP listings, every directory profile. Must match character-for-character | High |
 | 19 | **Session hours at each location** | With a shared phone number, hours are the only thing distinguishing the two GBP listings. Also the location pages' main differentiator | High |
@@ -35,7 +52,7 @@
 | 24 | **Send the existing photos** for coverage assessment | Whether a top-up shoot is needed, and design decisions depending on image availability | Medium |
 | 25 | **Which locale leads for each hospital's audience?** Informs the transcreation brief | Weeks 8–9 audience brief | Medium — from Week 1 interview |
 | 26 | Society memberships, publications, training timeline | About page | Comes from Week 1 interview |
-| 27 | **Verify the Red Cross emergency number is 140** | Emergency notice on every medical page | Before launch |
+
 
 ## Risk register
 
@@ -49,7 +66,10 @@
 | **Cross-border teleconsultation restrictions** discovered late | Medium | The page has to be rewritten or pulled near launch | Write it as second-opinion and report-review until question 20 is answered |
 | **Hero performance** on uneven Lebanese mobile networks | Low now | Would lose the primary conversion path | Pre-rendered loop everywhere; interactive viewer desktop-only, post-load, dynamic import; budgets enforced as pass/fail |
 | **Anatomical inaccuracy** | Low now | Credibility failure | Largely resolved: licensed medical-grade model, chosen by him from a shortlist before purchase |
-| **Directories outrank us on head terms** | Near-certain | Only a problem if we promised otherwise | Do not promise head terms. Own branded queries and the 42 evergreen long-tail pages; convert directory profiles into feeders |
+| **Directories outrank us on head terms** | Near-certain | Only a problem if we promised otherwise | Do not promise head terms. Own *qualified* branded queries and the 42 evergreen long-tail pages. Mitigated by verification: their index is thin, ~19–21 cardiologists nationally |
+| **Namesake collision with a former foreign minister** | [Certain] present | Bare-name branded search is unwinnable; entity confusion in Google's knowledge graph | Distinguishing name form everywhere; a "dr"/"cardiology" domain; `Physician` schema and `sameAs` treated as core strategy, not hygiene |
+| **Scope misstatement on interventional cardiology** | Unresolved | Either understates his practice by two high-value pages, or leaves an inaccurate public claim standing under a conservative advertising stance | Resolve item 28 before any copy is written |
+| **No directory profiles to convert** | [Certain] | The feeder strategy has nothing to feed from at launch | Create Vezeeta and DRAPP profiles during the build, with canonical NAP, live before launch |
 | **Site decays after handover** with no retainer | High over 12+ months | Gradual ranking and accuracy loss | Front-load durable content; honest handover note on what decays; analytics readable without us |
 | **GDPR exposure** via diaspora targeting | [Likely] applies | Compliance | Cookie consent, privacy policy in all three locales, no health data in forms |
 

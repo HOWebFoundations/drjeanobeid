@@ -47,6 +47,7 @@ the heart, it is optimising for the wrong thing.
 | [`docs/04-technical-architecture.md`](docs/04-technical-architecture.md) | Stack, perf budgets, multi-location schema, GBP, compliance |
 | [`docs/05-delivery-plan.md`](docs/05-delivery-plan.md) | Eleven weeks, gates, review windows, handover |
 | [`docs/06-diligence.md`](docs/06-diligence.md) | Resolved decisions and remaining open questions |
+| [`docs/07-verification.md`](docs/07-verification.md) | Desk research against public sources — what checked out, what did not |
 
 ## Confidence tagging
 
@@ -63,5 +64,10 @@ difference between a decision we can act on and one we still need to verify.
 
 Pre-discovery, but most of the scope is now settled. The next action is the Week 1
 interview and closing the short list of remaining questions in `docs/06-diligence.md` —
-principally the domain name, the exact hospital addresses and session hours, and the
-cross-border legality of teleconsulting diaspora patients.
+principally **whether he is interventional** — public sources contradict what we were told —
+plus the domain name, the department-level detail at each hospital, and the session hours.
+
+See [`docs/07-verification.md`](docs/07-verification.md) for what independent checking
+confirmed and what it overturned. Two premises changed: the branded-search play needs
+qualifying because a former Lebanese foreign minister shares his name, and he has no
+directory profiles to convert, so they have to be created rather than aligned.
