@@ -15,6 +15,9 @@ before Week 1 closes.
 - Confirm exact legal names, addresses, hours and phone routing for Geitaoui and Karantina
 - Collect and assess his existing professional photography
 - Heart model shortlist sent for his pick
+- **Source the Arabic medical translator now**, not in Week 8. [Likely] the hardest supplier
+  in the project to find at short notice, and Weeks 8–9 depend entirely on having one
+- Establish which locale leads for each hospital's audience — input to the transcreation brief
 
 **Gate: scope signed, remaining Diligence questions closed.**
 
@@ -38,13 +41,25 @@ two downstream translations rather than being drafted alongside them.
 - **Medical pages go to Dr. Obeid progressively, from Week 5** — not batched into one block
 - Desktop 3D viewer built last, as the most cuttable item
 
-## Weeks 8–9 — Translation
+## Weeks 8–9 — Transcreation
 
-- Approved English pages → professional FR and AR translation
+Not straight translation. The two hospitals serve different patient populations, so FR and
+AR are tuned for their audiences within a fixed clinical frame — see the boundary table in
+`02-content-inventory.md`.
+
+- **Write the audience brief first**, before a single page goes out. Audience, reading level,
+  emphasis per locale, and the explicit rule that clinical content is fixed. This brief is
+  what protects the schedule; without it the substance-drift check becomes a rewrite.
+- Approved English pages → FR and AR transcreation
 - **Human medical translator for Arabic**, not machine translation
-- Terminology check on both, by the translator rather than the doctor
+- Terminology **and substance-drift** check on both — has any clinical claim changed?
 - FR spot-check by Dr. Obeid
 - RTL layout QA with real Arabic content, not lorem ipsum — this is where RTL bugs surface
+
+[Likely] this is the phase most at risk of overrunning, because transcreation is slower than
+translation and the drift check can send pages back. The audience brief and a clear fixed-
+content rule are the mitigations. If it slips, the honest fallback is to launch EN and FR and
+follow with AR two to three weeks later — not to skip the drift check.
 
 ## Week 10 — QA
 
@@ -53,12 +68,16 @@ two downstream translations rather than being drafted alongside them.
 - Performance pass against the budgets in `04-technical-architecture.md`
 - Cross-device QA on iPhone and the Android tablet
 - Every locale checked on a real device, Arabic included
+- Root-locale routing verified: bare domain serves EN without redirecting, `hreflang`
+  self-references and `x-default` present, `dir` correct per locale
 
 ## Week 11 — Launch and handover
 
 - DNS cut over
 - Sitemap submitted, Search Console verified per locale
-- **Both GBP listings** built out and pointed at the site
+- **Both GBP listings** built out and pointed at the site, with distinct session hours and
+  department-level addresses (they share a phone number, so hours do the differentiating —
+  allow time for a possible manual verification)
 - Directory profiles updated with matching NAP
 - Monitoring on
 - **Handover pack** — see below

@@ -27,6 +27,10 @@ the heart, it is optimising for the wrong thing.
 | Review model | **Review substance once, then translate** | 14 medical pages fully reviewed, not 42 |
 | Interventional? | **No** — clinical and diagnostic only | Angiography/angioplasty pages dropped |
 | Booking | Phone + WhatsApp, secretary books manually | **No booking engine.** Sticky bar + lightweight request form |
+| Phone | **One secretary, one number for both hospitals** | Sticky bar is unambiguous everywhere; distinct hours differentiate the two GBP listings |
+| Root locale | **English at root**, `/fr` and `/ar` | `x-default` points at the root |
+| Teleconsultation | **Yes** — diaspora and remote patients | Page stays; GDPR clearly applies |
+| Editorial voice | **Tuned per locale**, substance identical | Transcreation, not translation. Review model preserved |
 | Heart asset | Higgsfield dead → **licensed/purchased anatomical model** | AI-generation risk removed entirely |
 | CMS | **No retainer → MDX only** | No Sanity. Articles front-loaded, not dripped |
 | Advertising rules | **Write conservatively, don't ask** | Strictest reading: no superlatives, testimonials, comparisons, pricing |
@@ -59,5 +63,5 @@ difference between a decision we can act on and one we still need to verify.
 
 Pre-discovery, but most of the scope is now settled. The next action is the Week 1
 interview and closing the short list of remaining questions in `docs/06-diligence.md` —
-principally the domain name, the phone routing across two locations, and the accepted
-insurers.
+principally the domain name, the exact hospital addresses and session hours, and the
+cross-border legality of teleconsulting diaspora patients.

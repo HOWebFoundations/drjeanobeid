@@ -7,7 +7,7 @@
 | Framework | Next.js App Router, TypeScript | |
 | Styling | Tailwind | |
 | Hosting | Vercel | |
-| i18n | `next-intl` | Three locales at launch: EN, FR, AR. RTL, hreflang |
+| i18n | `next-intl` | EN at root, `/fr`, `/ar`. RTL, hreflang |
 | Content | **MDX only** | [Decided] no retainer, so no CMS |
 | 3D | React Three Fiber + drei | Desktop only, dynamic import |
 | Forms | Route handler → Resend + Supabase | |
@@ -26,7 +26,23 @@ now and preserves the option at no ongoing cost.
 
 ## Internationalisation
 
-Three locales from day one. The things that are cheap now and expensive later:
+[Decided] **English at the root**, French and Arabic under prefixes:
+
+```
+/                  EN   (x-default)
+/fr/...            FR
+/ar/...            AR   (dir="rtl")
+```
+
+`next-intl` with the default locale unprefixed. The bare domain serves English rather than
+redirecting, which keeps the branded-search landing experience clean — someone searching
+"Dr Jean Obeid" lands on a real page, not a 302.
+
+Two things this makes non-obvious and worth getting right: the root route still needs an
+explicit `hreflang` set including a self-reference and `x-default`, and the `dir` attribute
+has to be set per-locale at the layout level rather than assumed from a default.
+
+The things that are cheap now and expensive later:
 
 - **RTL from the first component.** Logical properties (`margin-inline-start`, not
   `margin-left`), direction-aware icons, mirrored layout primitives. Retrofitting RTL into
@@ -85,8 +101,13 @@ What it needs:
 - **Distinct hours per listing** — this is what makes two practitioner listings legitimate
   rather than duplicates. His Geitaoui sessions and his Karantina sessions must be recorded
   separately and accurately.
-- **A reachable phone number per listing**, ideally distinguishable. See the open question
-  about phone routing in Diligence — it affects both the GBP setup and the mobile sticky bar.
+- **One shared phone number across both listings.** [Decided] there is one secretary and
+  one number. This is right for patients and slightly awkward for Google: a shared number is
+  a weaker distinctness signal between two listings at two hospital addresses. It is not
+  disqualifying, but it means **distinct session hours and department-level addresses carry
+  the whole burden of differentiation**, so both must be accurate rather than approximate.
+  Expect the listings to need more careful verification than usual, and do not be surprised
+  by a manual review.
 - **Suite / department / floor detail** in each address so the pin is not simply absorbed
   into the hospital entity.
 - **No review solicitation campaign.** [Decided] under the conservative advertising stance,
@@ -115,10 +136,27 @@ regulatory risk that he — not us — would carry.
 
 - **No health data collected through forms** (this is why the symptom field is a dropdown)
 - Privacy policy, in all three locales
-- Cookie consent layer — [Likely] GDPR applies because the teleconsultation page targets
-  diaspora in France
+- Cookie consent layer — GDPR applies. [Decided] teleconsultation is confirmed and
+  explicitly targets diaspora patients, so this is no longer a hedge
 - Medical disclaimer
 - Written consent for any photo showing a patient
+
+### Teleconsultation — two unresolved questions
+
+[Decided] he offers teleconsultation to diaspora and remote patients, which is good for the
+site and raises two things the build should not get ahead of:
+
+1. **Cross-border practice.** Whether consulting a patient physically resident in France,
+   Germany or the Gulf is permissible under Lebanese rules and under the destination
+   country's rules. [Guessing] this varies by country and is often restricted to second
+   opinions rather than primary care. He or his professional body should confirm before the
+   page describes the service concretely. Until then, write the page around **second
+   opinions and report review** rather than diagnosis and treatment.
+2. **Fees.** The conservative advertising stance rules out pricing *promotions*. Stating a
+   consultation fee plainly is arguably not a promotion, but it sits close enough to the line
+   that the safe default is to omit fees from the site and have the secretary quote them.
+
+Neither blocks the build. Both should be settled before that page goes live.
 
 ## Post-launch measurement
 

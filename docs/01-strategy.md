@@ -60,12 +60,17 @@ workable — Google permits practitioner listings at a hospital address — but 
 deliberate setup rather than the default "claim your clinic" flow. Details in
 `04-technical-architecture.md`.
 
-**It probably means two different patient populations.** [Likely] a private francophone
-university hospital and a governmental hospital draw quite different patients in income,
-language and referral route. If that holds, it is the strongest justification yet for the
-three-language launch: French and Arabic are not just diaspora and local-search plays, they
-map onto two real halves of his actual practice. **Confirm this in the Week 1 interview** —
-it should shape tone, not just translation.
+**It means two different patient populations.** [Decided] confirmed — a private francophone
+university hospital and a governmental hospital draw genuinely different patients in income,
+language and referral route. This is the strongest justification for the three-language
+launch: French and Arabic are not just diaspora and local-search plays, they map onto two
+real halves of his actual practice.
+
+The editorial consequence is significant and is handled in `02-content-inventory.md`: the
+locales are **tuned, not merely translated**. Tone, reading level, examples and emphasis
+adapt to the audience. Medical substance does not — that stays identical across all three
+and is reviewed once. Keeping that boundary sharp is what preserves the eleven-week
+timeline.
 
 ### Trust content does the heavy lifting
 
@@ -92,7 +97,12 @@ practice site.
 
 ## 3. Languages
 
-[Decided] **EN, FR and AR all launch together.**
+[Decided] **EN, FR and AR all launch together, English at the root.**
+
+Routing is `/` for English, `/fr` and `/ar` for the others, with `x-default` pointing at the
+root. English is already the drafting language and the neutral default for diaspora and
+international traffic; hreflang resolves the right locale for everyone else regardless of
+which one sits at the root.
 
 This is the right call given two hospitals with likely different patient mixes, but be
 clear about the cost: it roughly triples copy volume and translation work, and it is the
@@ -125,11 +135,14 @@ Three actions, always visible, never collapsed: **Call**, **WhatsApp**, **Reques
 Appointment**. 44px minimum touch targets. The WhatsApp link carries a prefilled message so
 the patient does not have to compose one.
 
-**Open question — two locations, how many phone numbers?** If there is one secretary and
-one number for both hospitals, the sticky bar is trivial. If each location has its own
-number, "Call" becomes ambiguous and we need either a location-aware bar (the button
-follows the page you are on, with a chooser on generic pages) or a single primary number
-that routes. This needs answering before the contact page is designed — it is in Diligence.
+[Decided] **one secretary, one number for both hospitals.** This is the best case: the
+Call button is unambiguous on every page, there is one WhatsApp thread, and the form's
+location field is a preference she reads rather than a routing decision the site has to
+make. No location-aware bar, no chooser, no phone-tree logic.
+
+One knock-on effect, in `04-technical-architecture.md`: two Google Business Profile
+listings sharing a phone number are harder to keep distinct, so **session hours become the
+primary differentiator** between them and must be accurate.
 
 ### The form
 
@@ -137,7 +150,7 @@ that routes. This needs answering before the contact page is designed — it is 
 | --- | --- |
 | Name | Required |
 | Phone | Required |
-| Preferred location | Required — Geitaoui or Karantina |
+| Preferred location | Required — Geitaoui, Karantina, or teleconsultation |
 | Preferred time | Required, coarse (morning / afternoon / specific day) |
 | Reason | Dropdown, fixed options |
 

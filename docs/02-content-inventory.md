@@ -43,11 +43,24 @@ as traffic bait: it misrepresents his services and produces exactly the wrong en
 First visit, preparation per test, insurance and payment, what to bring.
 
 ### Teleconsultation and second opinion
-Aimed at the diaspora. This page is also the reason GDPR applies.
+[Decided] **confirmed — he offers this** for diaspora and remote patients.
+
+Keep the dedicated page. It is a genuine differentiator: the directories list in-person
+availability and do not serve a Lebanese expatriate in Paris or Dubai trying to get a
+second opinion on a parent's echo report. It is also high-intent, low-competition search
+territory in all three languages.
+
+This page is why GDPR clearly applies, and it raises two questions now in Diligence: whether
+cross-border teleconsultation of patients resident in the EU is permissible under both
+Lebanese and destination-country rules, and how fees are presented given the conservative
+advertising stance. Neither blocks the build, but both should be settled before the page
+goes live.
 
 ### Locations — one page each (2)
-**Geitaoui** and **Karantina**. Each with its own map, hours, parking, access notes,
-phone/WhatsApp, and location-specific schema. These pages must be genuinely distinct — a
+**Geitaoui** and **Karantina**. Each with its own map, session hours, parking, access
+notes, and location-specific schema. [Decided] the phone and WhatsApp are shared, so those
+are the same on both pages — **the session hours are what make each page distinct**, and
+they need to be accurate rather than approximate. These pages must be genuinely distinct — a
 duplicated template with the address swapped is both a poor patient experience and a
 thin-content problem.
 
@@ -78,17 +91,51 @@ absorb. Then stop, honestly, rather than leaving an empty blog that signals aban
 An articles section with six good pieces and no dates is better than one with three posts
 from two years ago.
 
-## Translation and review workflow
+## Translation, transcreation, and review workflow
 
-[Decided] **draft in English, full medical review once, then translate.**
+[Decided] two answers interact here and the interaction matters:
+
+- Draft in English, full medical review once, then translate.
+- The two hospitals serve genuinely different patient populations, so write for both.
+
+Taken naively these conflict. If the French and Arabic pages are rewritten for their
+audiences, they diverge in substance and a single English sign-off no longer covers what is
+actually published — which is a liability problem, not just a process one.
+
+### The boundary
+
+| Identical across all three locales | Adapts per locale |
+| --- | --- |
+| Medical facts and claims | Tone and register |
+| Symptom lists | Reading level |
+| When-to-see-a-cardiologist thresholds | Examples and framing |
+| Test descriptions and what they involve | Which sections lead |
+| Emergency guidance | Length and detail of the explainer sections |
+| Cited sources | Calls to action and which location is emphasised |
+
+**Medical substance is reviewed once in English and is not open to the translator.**
+Everything else is. This is transcreation within a fixed clinical frame, and it is what lets
+us serve two real audiences without tripling his review load.
+
+Practically: the translators get a written brief covering the audience for each locale, the
+reading level, and an explicit instruction that clinical content is fixed. Budget for
+transcreation rates rather than straight translation — [Likely] a meaningful uplift per
+word, and worth it.
+
+### Workflow
 
 ```
 1. HOWF drafts 14 medical pages in EN, from the two 60-minute interviews
 2. Dr. Obeid reviews and signs off the MEDICAL SUBSTANCE in EN  ← the critical path
-3. Approved EN pages go to professional translation (FR, AR)
-4. Translations get a TERMINOLOGY check by a medical translator — not a fresh review from him
-5. He spot-checks FR (his likely strongest professional language) before launch
+3. Approved EN pages go to transcreation (FR, AR) with the audience brief
+4. Transcreations get a TERMINOLOGY + SUBSTANCE-DRIFT check — has any clinical
+   claim changed? — by a medical translator, not a fresh review from him
+5. He spot-checks FR before launch
 ```
+
+Step 4 is doing more work than it was. The substance-drift check is the safeguard that makes
+per-locale tuning compatible with a single medical sign-off, so it is not optional and it is
+not something a general translator can do.
 
 This cuts his review load from 42 pages to 14 full reviews plus a light FR pass. It is the
 difference between an eleven-week project and a five-month one.
