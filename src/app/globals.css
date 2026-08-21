@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+
+/*
+ * Design system — docs/01-strategy.md section 5.
+ * This is the doctor's brand, not HOWF's green and brass.
+ *
+ * Deep navy/charcoal base, warm off-white surfaces, and ONE arterial red
+ * reserved for the heart and primary buttons. If red starts appearing on
+ * anything else, the accent stops meaning "act here".
+ */
+@theme {
+  /* Base — deep navy, cool and clinical without being cold */
+  --color-ink-950: oklch(0.18 0.032 255);
+  --color-ink-900: oklch(0.24 0.038 255);
+  --color-ink-800: oklch(0.32 0.036 255);
+  --color-ink-600: oklch(0.48 0.028 255);
+  --color-ink-400: oklch(0.64 0.020 255);
+
+  /* Surfaces — warm off-white, to offset the cool base */
+  --color-surface-50: oklch(0.985 0.004 85);
+  --color-surface-100: oklch(0.965 0.006 85);
+  --color-surface-200: oklch(0.930 0.008 85);
+
+  /* Accent — arterial red. Heart and primary actions ONLY. */
+  --color-arterial-600: oklch(0.55 0.185 25);
+  --color-arterial-700: oklch(0.47 0.170 25);
+
+  /* Emergency — distinct from the accent, so "call 140" never reads as a CTA */
+  --color-alert-50: oklch(0.965 0.020 60);
+  --color-alert-700: oklch(0.50 0.140 45);
+
+  --font-serif: var(--font-heading), ui-serif, Georgia, serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: var(--font-arabic), var(--font-body), ui-sans-serif, sans-serif;
+
+  /* Minimum touch target — WCAG 2.2 AA, and thumbs on a phone */
+  --spacing-touch: 2.75rem; /* 44px */
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-surface-50);
+    color: var(--color-ink-900);
+    font-family: var(--font-sans);
+    /* Room for the sticky contact bar so it never covers page content. */
+    padding-block-end: env(safe-area-inset-bottom);
+  }
+
+  [dir='rtl'] body {
+    font-family: var(--font-arabic);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+    text-wrap: balance;
+  }
+
+  [dir='rtl'] :is(h1, h2, h3) {
+    font-family: var(--font-arabic);
+  }
+
+  /* Motion stays restrained everywhere except the heart — and not even there
+     for anyone who has asked it not to. */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-arterial-600);
+    outline-offset: 2px;
+  }
+}
+
+@utility tap-target {
+  min-block-size: var(--spacing-touch);
+  min-inline-size: var(--spacing-touch);
+}

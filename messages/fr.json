@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "titleDefault": "[FR] Dr Jean Obeid, Cardiologist — Beirut",
+    "description": "[FR] Interventional cardiologist practising at Geitaoui and Karantina hospitals in Beirut. Consultations, cardiac testing, coronary angiography and angioplasty."
+  },
+  "nav": {
+    "primary": "[FR] Primary",
+    "specialty": "[FR] Cardiologist, Beirut",
+    "about": "[FR] About",
+    "conditions": "[FR] Conditions",
+    "procedures": "[FR] Tests & procedures",
+    "locations": "[FR] Locations",
+    "contact": "[FR] Contact"
+  },
+  "contactBar": {
+    "label": "[FR] Contact Dr Obeid",
+    "call": "[FR] Call",
+    "whatsapp": "[FR] WhatsApp",
+    "request": "[FR] Appointment"
+  },
+  "home": {
+    "hero": {
+      "heading": "[FR] Cardiology care in Beirut, from consultation to intervention",
+      "subheading": "[FR] Dr Jean Obeid sees patients at Geitaoui and Karantina hospitals. If you are worried about your heart, or a parent's, you can reach the clinic directly.",
+      "ctaPrimary": "[FR] Request an appointment",
+      "ctaSecondary": "[FR] Conditions treated",
+      "heartAlt": "[FR] Rotating anatomical model of the human heart"
+    },
+    "conditions": "[FR] Conditions treated",
+    "procedures": "[FR] Tests and procedures",
+    "locations": "[FR] Where Dr Obeid practises"
+  },
+  "emergency": {
+    "heading": "[FR] If this is an emergency",
+    "body": "[FR] Chest pain or shortness of breath needs immediate help. Call the Lebanese Red Cross on <number></number> rather than booking online."
+  },
+  "byline": {
+    "reviewedBy": "[FR] Medically reviewed by {name} on",
+    "sources": "[FR] Sources"
+  },
+  "footer": {
+    "tagline": "[FR] Cardiology — Beirut",
+    "locations": "[FR] Locations",
+    "legal": "[FR] Legal",
+    "privacy": "[FR] Privacy",
+    "disclaimer": "[FR] Medical disclaimer"
+  },
+  "contact": {
+    "title": "[FR] Contact and appointments",
+    "intro": "[FR] Appointments are arranged by the clinic secretary. Call or send a WhatsApp message for the fastest response, or send a request below and she will come back to you.",
+    "form": {
+      "name": "[FR] Your name",
+      "phone": "[FR] Phone number",
+      "location": "[FR] Preferred location",
+      "locationTeleconsultation": "[FR] Teleconsultation",
+      "time": "[FR] Preferred time",
+      "timeMorning": "[FR] Morning",
+      "timeAfternoon": "[FR] Afternoon",
+      "timeSpecific": "[FR] A specific day — the secretary will call",
+      "reason": "[FR] Reason for the visit",
+      "reasonFirst": "[FR] First consultation",
+      "reasonFollowUp": "[FR] Follow-up",
+      "reasonSecondOpinion": "[FR] Second opinion",
+      "reasonTest": "[FR] A test my doctor asked for",
+      "reasonOther": "[FR] Something else",
+      "submit": "[FR] Send request",
+      "privacyNote": "[FR] Please do not describe symptoms here. If you need urgent help, call the Red Cross on 140."
+    }
+  },
+  "empty": {
+    "heading": "[FR] Content in preparation",
+    "body": "[FR] This page is being written and will be reviewed by Dr Obeid before it is published."
+  }
+}

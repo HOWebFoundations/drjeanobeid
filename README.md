@@ -74,3 +74,53 @@ See [`docs/07-verification.md`](docs/07-verification.md) for what independent ch
 confirmed and what it overturned. Two premises changed: the branded-search play needs
 qualifying because a former Lebanese foreign minister shares his name, and he has no
 directory profiles to convert, so they have to be created rather than aligned.
+
+---
+
+## Running the site
+
+```bash
+npm install
+cp .env.example .env.local   # fill in once the clinic's real details exist
+npm run dev                  # http://localhost:3000
+npm run build && npm start   # production build
+npm run typecheck
+```
+
+### What is built
+
+A working Next.js 16 scaffold — **structure and plumbing, not content**. It builds green
+and prerenders 49 pages across the three locales.
+
+| Area | State |
+| --- | --- |
+| Routing | EN at root, `/fr`, `/ar`. Verified: root serves 200 with no redirect |
+| RTL | `dir="rtl"` on Arabic, set per locale at layout level. Logical CSS properties throughout |
+| hreflang | All three locales plus `x-default`, with self-referencing canonicals |
+| Design system | Tokens in `src/app/globals.css`. Arterial red reserved for the heart and primary actions |
+| Entity facts | `src/lib/site.ts` — single source of truth for NAP. Import it; never duplicate it |
+| Schema | `Physician` + two `MedicalClinic`, `MedicalCondition`, `MedicalProcedure`, `FAQPage`, `BreadcrumbList` |
+| Heart hero | Poster-as-LCP video loop; interactive viewer behind a pointer + reduced-motion + idle gate |
+| Content | MDX at `content/{locale}/{collection}/{slug}.mdx`, one worked example per collection |
+| Forms | Closed-set validation, no free-text symptom field. Delivery deliberately unwired |
+
+### What is deliberately not built
+
+- **The 3D viewer.** `src/components/heart/HeartViewer.tsx` returns `null` and React Three
+  Fiber is not installed. There is no GLB to render until the model is sourced in Week 1,
+  and installing a 3D stack before there is geometry is weight with nothing behind it. The
+  dynamic-import boundary around it is real and working.
+- **Form delivery.** Resend, Supabase and the WhatsApp notification are stubbed. Wiring them
+  to placeholder credentials would produce a form that silently drops patient requests —
+  worse than one that is visibly not live yet.
+- **Content.** The two `.mdx` files are structural scaffolds carrying no medical claims.
+  Real copy comes from the interviews in `docs/08` and needs Dr. Obeid's sign-off.
+
+### ⚠️ Performance budget is already tight
+
+Measured on the home page: **187 KB gzipped initial JS against a 200 KB budget.**
+
+That is with no 3D library, no analytics, no map embed, and almost no content. Those three
+additions will breach it. Before any of them ships, run `npm run analyze` and decide what
+comes out — the budget is pass/fail, not aspirational, because the whole mobile conversion
+path depends on it.

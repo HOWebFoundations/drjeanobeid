@@ -72,6 +72,7 @@ See `07-verification.md` for sources.
 | **No directory profiles to convert** | [Certain] | The feeder strategy has nothing to feed from at launch | Create Vezeeta and DRAPP profiles during the build, with canonical NAP, live before launch |
 | **Site decays after handover** with no retainer | High over 12+ months | Gradual ranking and accuracy loss | Front-load durable content; honest handover note on what decays; analytics readable without us |
 | **GDPR exposure** via diaspora targeting | [Likely] applies | Compliance | Cookie consent, privacy policy in all three locales, no health data in forms |
+| **JS budget breached by analytics, maps or 3D** | High — 187 KB of 200 KB already used with none of them added | The mobile conversion path is the whole product; a slow hero loses the patient to Vezeeta | Static map image not an embed; GA4 deferred or dropped for Vercel Analytics; 3D stays dynamically imported and desktop-gated. Re-measure with `npm run analyze` before each lands |
 
 ## Current state
 

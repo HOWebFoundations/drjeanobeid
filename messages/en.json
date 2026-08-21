@@ -1,0 +1,74 @@
+{
+  "meta": {
+    "titleDefault": "Dr Jean Obeid, Cardiologist — Beirut",
+    "description": "Interventional cardiologist practising at Geitaoui and Karantina hospitals in Beirut. Consultations, cardiac testing, coronary angiography and angioplasty."
+  },
+  "nav": {
+    "primary": "Primary",
+    "specialty": "Cardiologist, Beirut",
+    "about": "About",
+    "conditions": "Conditions",
+    "procedures": "Tests & procedures",
+    "locations": "Locations",
+    "contact": "Contact"
+  },
+  "contactBar": {
+    "label": "Contact Dr Obeid",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "request": "Appointment"
+  },
+  "home": {
+    "hero": {
+      "heading": "Cardiology care in Beirut, from consultation to intervention",
+      "subheading": "Dr Jean Obeid sees patients at Geitaoui and Karantina hospitals. If you are worried about your heart, or a parent's, you can reach the clinic directly.",
+      "ctaPrimary": "Request an appointment",
+      "ctaSecondary": "Conditions treated",
+      "heartAlt": "Rotating anatomical model of the human heart"
+    },
+    "conditions": "Conditions treated",
+    "procedures": "Tests and procedures",
+    "locations": "Where Dr Obeid practises"
+  },
+  "emergency": {
+    "heading": "If this is an emergency",
+    "body": "Chest pain or shortness of breath needs immediate help. Call the Lebanese Red Cross on <number></number> rather than booking online."
+  },
+  "byline": {
+    "reviewedBy": "Medically reviewed by {name} on",
+    "sources": "Sources"
+  },
+  "footer": {
+    "tagline": "Cardiology — Beirut",
+    "locations": "Locations",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "disclaimer": "Medical disclaimer"
+  },
+  "contact": {
+    "title": "Contact and appointments",
+    "intro": "Appointments are arranged by the clinic secretary. Call or send a WhatsApp message for the fastest response, or send a request below and she will come back to you.",
+    "form": {
+      "name": "Your name",
+      "phone": "Phone number",
+      "location": "Preferred location",
+      "locationTeleconsultation": "Teleconsultation",
+      "time": "Preferred time",
+      "timeMorning": "Morning",
+      "timeAfternoon": "Afternoon",
+      "timeSpecific": "A specific day — the secretary will call",
+      "reason": "Reason for the visit",
+      "reasonFirst": "First consultation",
+      "reasonFollowUp": "Follow-up",
+      "reasonSecondOpinion": "Second opinion",
+      "reasonTest": "A test my doctor asked for",
+      "reasonOther": "Something else",
+      "submit": "Send request",
+      "privacyNote": "Please do not describe symptoms here. If you need urgent help, call the Red Cross on 140."
+    }
+  },
+  "empty": {
+    "heading": "Content in preparation",
+    "body": "This page is being written and will be reviewed by Dr Obeid before it is published."
+  }
+}

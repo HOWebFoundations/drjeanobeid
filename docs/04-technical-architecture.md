@@ -70,6 +70,24 @@ Supporting decisions: AVIF/WebP through `next/image`; self-hosted fonts with siz
 fallbacks (three scripts, so subset aggressively); the heart's poster image is the LCP
 element.
 
+### Measured, 2026-08-21 — the JS budget is already tight
+
+The scaffold's home page ships **187 KB gzipped initial JS against the 200 KB budget**, with
+no 3D library, no analytics, no map embed and almost no content. Roughly 13 KB of headroom
+for three things that will each cost more than that.
+
+This is a finding, not a footnote. Options, in the order I would take them:
+
+1. **Map** — do not embed Google Maps. A static map image linking out to directions costs a
+   few KB instead of several hundred, and patients tap through to their own maps app anyway.
+2. **Analytics** — GA4 is the heaviest of the three. Consider Vercel Analytics alone, or
+   load GA4 after interaction rather than on load.
+3. **3D viewer** — already behind a dynamic import and desktop-gated, so it does not count
+   against the mobile initial bundle. Keep it that way; the moment it is statically imported
+   anywhere the budget is gone.
+
+Re-measure with `npm run analyze` before each of these lands.
+
 ## SEO, local, and the two-location problem
 
 ### Structured data
