@@ -54,6 +54,10 @@ See `07-verification.md` for sources.
 | 26 | Society memberships, publications, training timeline | About page | Comes from Week 1 interview |
 
 
+> **See also `10-pre-launch-constraints.md`**, which covers constraints this register did
+> not reach: hospital permission to use their names, domain control, GBP verification lead
+> time, photography copyright, and the Article 9 exposure in the appointment form.
+
 ## Risk register
 
 | Risk | Likelihood | Impact | Mitigation |

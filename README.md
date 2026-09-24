@@ -51,6 +51,7 @@ the heart, it is optimising for the wrong thing.
 | [`docs/07-verification.md`](docs/07-verification.md) | Desk research against public sources — what checked out, what did not |
 | [`docs/08-discovery-interview.md`](docs/08-discovery-interview.md) | Scripts for the two 60-minute sessions with Dr. Obeid |
 | [`docs/09-client-questionnaire.md`](docs/09-client-questionnaire.md) | Self-serve form for the facts that don't need a conversation |
+| [`docs/10-pre-launch-constraints.md`](docs/10-pre-launch-constraints.md) | What can stop the launch or cause real harm — read before building further |
 
 ## Confidence tagging
 
