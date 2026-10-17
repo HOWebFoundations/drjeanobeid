@@ -83,6 +83,10 @@ follow with AR two to three weeks later — not to skip the drift check.
 
 ## Week 11 — Launch and handover
 
+- **Move hosting to a Vercel Pro plan, on an account Dr. Obeid owns.** The pre-launch site runs
+  on HOWF's Hobby team, and Vercel restricts Hobby to non-commercial personal use; a medical
+  practice site is commercial. Transfer the project, then attach the domain
+
 - **Turn on indexing: set `ALLOW_INDEXING=true` in Vercel and redeploy.** Until then every
   page tells search engines not to index it. Forgetting this step means the site launches
   invisible to Google

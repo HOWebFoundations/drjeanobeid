@@ -90,7 +90,8 @@ questionnaire and interviews.
 
 ## Hosting
 
-Vercel, via its GitHub integration: every push to this repository deploys automatically.
+**Live (pre-launch): https://drjeanobeid.vercel.app** — Vercel, team HOWF. The repository is
+connected, so every push deploys automatically.
 
 **Pre-launch, the site is deliberately invisible to search engines.** Every page sends
 `noindex` until `ALLOW_INDEXING=true` is set in Vercel's environment variables. Set it only at

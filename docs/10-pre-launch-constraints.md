@@ -224,6 +224,7 @@ medical translator in Week 1; it is the hardest supplier here to find late.
 | --- | --- |
 | **Heart model licence** | Verify commercial web use before purchase; avoid share-alike. Keep the licence file in the repo next to the asset |
 | **Account ownership** | Vercel, Supabase, Resend, GBP, analytics — in *his* name with HOWF granted access, not the reverse. With no retainer, anything in HOWF's name becomes lock-in he did not ask for |
+| **Vercel plan** | Pre-launch runs on HOWF's Hobby team. Vercel restricts Hobby to non-commercial personal use, so launch needs Pro (paid), ideally on his account |
 | **Who pays for renewals** | Domain, hosting, Supabase. Agree at handover or it lapses in month 14 |
 | **WCAG 2.2 AA is claimed, so it must be tested** | Especially RTL focus order and the sticky contact bar. A claim you have not tested is a liability, not a feature |
 | **RTL QA with real Arabic** | Not lorem ipsum. Bugs only surface with real content |
