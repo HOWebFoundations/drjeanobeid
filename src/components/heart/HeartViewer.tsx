@@ -8,7 +8,13 @@
  * licensed in Week 1 (docs/03-heart-asset.md), and installing a 3D stack
  * before we have geometry is weight with nothing behind it.
  *
- * What goes here when the asset lands:
+ * ⚠️ LICENCE: a real-time viewer sends the model file to the browser. Standard
+ * TurboSquid, CGTrader and Sketchfab Store licences forbid that. Only build this
+ * with an openly licensed model (e.g. Z-Anatomy, CC BY-SA) or a negotiated
+ * licence. The recommended alternative is hotspots over the rendered frames.
+ * See docs/12-heart-model-shortlist.md. Decision pending.
+ *
+ * What goes here if it is built:
  *   - <Canvas> with the compressed GLB (meshopt/Draco, KTX2, under 3 MB)
  *   - drag-to-rotate, damped
  *   - 4–6 hotspots linking into the condition pages:

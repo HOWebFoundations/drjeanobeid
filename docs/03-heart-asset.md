@@ -16,6 +16,23 @@ arrive on phones over uneven Lebanese mobile networks. A hero that stalls on a w
 connection loses the patient to Vezeeta before the page paints. Pre-rendering turns the
 delivery cost into a video file and freezes the anatomy at a frame we have reviewed.
 
+### ⚠️ Licence constraint on Output B — decision pending
+
+Research in `12-heart-model-shortlist.md` found that **TurboSquid, CGTrader and Sketchfab
+Store licences all forbid sending the model file to the browser**, which is what a real-time
+viewer does. They allow rendered video and images, so Output A is unaffected.
+
+So Output B as specified is only possible with an openly licensed model (Z-Anatomy, CC BY-SA)
+or a specially negotiated licence (e.g. SciePro).
+
+**Recommended alternative:** keep the hotspots, the thing that justifies Output B, as real
+buttons over the rendered poster frame, with an optional drag-to-rotate built from a 90-frame
+image sequence. Every licence allows it, it works on phones as well as desktop, and it costs
+a few KB instead of a 3D library. Full comparison in `12`.
+
+**HOWF to decide** before the model is bought, since the decision determines which models are
+eligible.
+
 ### What justifies the interactive version at all
 
 The **hotspots**. Four to six, each linking into a condition page:
@@ -120,7 +137,9 @@ brand motif. This is what makes the asset pay back beyond the hero.
 
 ## Acceptance criteria
 
-- [ ] Licence verified for commercial web use, attribution recorded if required
+- [ ] Licence verified **for the specific output**: rendered video and frames are allowed by
+      most licences; a browser-delivered 3D model is not (see `12-heart-model-shortlist.md`).
+      Attribution recorded if required
 - [ ] Doctor sign-off on anatomy
 - [ ] Loop is seamless
 - [ ] Poster under 100 KB
