@@ -20,6 +20,7 @@
 | 14 | Root locale | **English at root**, `/fr` and `/ar`, `x-default` on the root |
 | 15 | Teleconsultation | **Yes** — diaspora and remote patients. Page stays, GDPR confirmed |
 | 16 | Patient mix | **Genuinely different between the two hospitals** → transcreation per locale, clinical substance fixed |
+| 33 | Hospital permission to name locations on the site | **Agreed** (2026-10-17). Location pages and `MedicalClinic` schema unblocked. GBP-at-address and on-site photography not covered — see `10-pre-launch-constraints.md` A1 |
 
 ## Closed by independent verification
 

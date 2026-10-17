@@ -11,7 +11,17 @@ we do not get to make the call and tell him afterwards.
 
 ## A · Can stop the launch
 
-### A1 · Hospital permission to use their names 🔴 not yet raised with anyone
+### A1 · Hospital permission to use their names — ✅ PARTIALLY CLEARED
+
+> **Update 2026-10-17.** Agreement obtained to **put the locations on the website**. That
+> covers permission 1 below: naming both hospitals in copy, the two location pages, and the
+> `MedicalClinic` schema. The location pages are unblocked and can be built.
+>
+> **Permissions 2 and 3 do not follow from it** and are still open. Listing a business pin at
+> someone else's address, and photographing inside a working hospital, are different asks
+> from being named as an affiliated consultant — and a governmental hospital in particular
+> may treat them differently. Do not assume the agreement stretches; see the questions at the
+> end of this section.
 
 The site names **Hôpital Libanais Geitaoui – CHU** and the **Governmental Hospital of Beirut
 Quarantine** throughout — in copy, in `MedicalClinic` schema, on two location pages, and in
@@ -31,7 +41,19 @@ staff using its name commercially. Either way this is a question for him to put 
 hospital's administration, early, because a refusal from Karantina after the location page
 is built, translated and reviewed wastes three weeks of work across three locales.
 
-**Action: he asks both hospitals in Week 1.** Not us, and not by email from an agency.
+**Still to confirm:**
+
+- **Does the agreement cover a Google Business Profile listing pinned at each address?**
+  This is the one that matters most for timing — GBP verification is the longest external
+  lead time in the project (D1) and should start in Week 2.
+- **Does it cover photography on the premises?** Relevant only if the existing photo set has
+  gaps that need a top-up shoot.
+- **Is it in writing, and from both hospitals separately?** A verbal yes from a department
+  head is normal practice and usually fine for a private hospital. For the **governmental**
+  hospital at Karantina, get something written — personnel change, and the site will outlast
+  whoever said yes.
+
+Each remaining ask goes from him, not from us and not by email from an agency.
 
 ### A2 · Domain control 🔴
 
@@ -211,8 +233,10 @@ medical translator in Week 1; it is the hardest supplier here to find late.
 
 If you only chase four things before anything else:
 
-1. **Ask both hospitals for permission** to use their names and to list at their addresses.
+1. ~~Ask both hospitals for permission to use their names~~ — ✅ **agreed.** Still confirm
+   whether it extends to GBP listings at their addresses and to photography on site.
 2. **Establish who actually controls `drjeanobeid.com`.**
-3. **Start GBP verification now** — longest lead time, doesn't need the site.
+3. **Start GBP verification** — longest lead time, doesn't need the site. Gated on the
+   question above.
 4. **Get his written confirmation on the advertising rules**, so the compliance judgement is
    his rather than ours.
