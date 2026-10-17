@@ -89,7 +89,7 @@ export default async function LocationPage({
                   {site.contact.phone}
                 </a>
               ) : (
-                <span className="text-ink-400">{t('pending')}</span>
+                <span className="italic text-ink-600">{t('pending')}</span>
               )}
             </dd>
           </div>
@@ -106,7 +106,7 @@ export default async function LocationPage({
                   ))}
                 </ul>
               ) : (
-                <span className="text-ink-400">{t('pending')}</span>
+                <span className="italic text-ink-600">{t('pending')}</span>
               )}
             </dd>
           </div>

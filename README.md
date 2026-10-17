@@ -80,6 +80,13 @@ directory profiles to convert, so they have to be created rather than aligned.
 
 ---
 
+## Design
+
+**Key screens (phone):** https://claude.ai/artifact/VMX39Nq7GsiwDpkcsG5voJ — home, condition
+(coronary artery disease), location (Geitaoui) and contact, built on the site's own tokens.
+Private until shared from its Share menu. Bracketed text marks facts still to come from the
+questionnaire and interviews.
+
 ## Running the site
 
 ```bash

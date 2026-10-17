@@ -14,6 +14,7 @@
   --color-ink-900: oklch(0.24 0.038 255);
   --color-ink-800: oklch(0.32 0.036 255);
   --color-ink-600: oklch(0.48 0.028 255);
+  /* ink-400 is ~3.3:1 on the surfaces: decorative use only, never text (WCAG AA needs 4.5:1). */
   --color-ink-400: oklch(0.64 0.020 255);
 
   /* Surfaces — warm off-white, to offset the cool base */
