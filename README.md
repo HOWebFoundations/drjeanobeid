@@ -52,6 +52,7 @@ the heart, it is optimising for the wrong thing.
 | [`docs/08-discovery-interview.md`](docs/08-discovery-interview.md) | Scripts for the two 60-minute sessions with Dr. Obeid |
 | [`docs/09-client-questionnaire.md`](docs/09-client-questionnaire.md) | Self-serve form for the facts that don't need a conversation |
 | [`docs/10-pre-launch-constraints.md`](docs/10-pre-launch-constraints.md) | What can stop the launch or cause real harm — read before building further |
+| [`docs/11-written-followup-template.md`](docs/11-written-followup-template.md) | The template he fills in after Session 2 for the five conditions not covered live |
 
 ## Confidence tagging
 

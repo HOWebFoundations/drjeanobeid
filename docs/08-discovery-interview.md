@@ -205,7 +205,8 @@ Covers the five conditions not done live: **heart failure, valve disease, choles
 palpitations, syncope.**
 
 Send them the same eight-question template as a document, one page per condition, with the
-CAD answers filled in as a worked example. Seeing his own words in the format is what makes
+CAD answers filled in as a worked example. **The ready-to-send template is in
+`11-written-followup-template.md`.** Seeing his own words in the format is what makes
 this quick — most doctors complete it in under an hour once they have the pattern.
 
 Ask for bullet points, not prose. We write the prose. His job is accuracy and voice, not
