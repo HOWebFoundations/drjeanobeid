@@ -88,6 +88,14 @@ directory profiles to convert, so they have to be created rather than aligned.
 Private until shared from its Share menu. Bracketed text marks facts still to come from the
 questionnaire and interviews.
 
+## Hosting
+
+Vercel, via its GitHub integration: every push to this repository deploys automatically.
+
+**Pre-launch, the site is deliberately invisible to search engines.** Every page sends
+`noindex` until `ALLOW_INDEXING=true` is set in Vercel's environment variables. Set it only at
+launch, when content is signed off and `drjeanobeid.com` points at Vercel — then redeploy.
+
 ## Running the site
 
 ```bash

@@ -83,6 +83,9 @@ follow with AR two to three weeks later — not to skip the drift check.
 
 ## Week 11 — Launch and handover
 
+- **Turn on indexing: set `ALLOW_INDEXING=true` in Vercel and redeploy.** Until then every
+  page tells search engines not to index it. Forgetting this step means the site launches
+  invisible to Google
 - DNS cut over
 - Sitemap submitted, Search Console verified per locale
 - Written confirmation from Karantina's administration on file (verbal agreement is in hand)

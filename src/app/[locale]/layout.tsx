@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Source_Serif_4, Inter, IBM_Plex_Sans_Arabic } from 'next/font/google';
 
 import { routing, directionOf, localizedPath, type Locale } from '@/i18n/routing';
-import { site } from '@/lib/site';
+import { site, allowIndexing } from '@/lib/site';
 import { physicianSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/JsonLd';
 import { Header } from '@/components/layout/Header';
@@ -60,6 +60,7 @@ export async function generateMetadata({
       template: `%s · ${site.practitioner.nameQualified}`,
     },
     description: t('description'),
+    robots: allowIndexing ? undefined : { index: false, follow: false },
     alternates: {
       canonical:
         locale === routing.defaultLocale ? site.url : `${site.url}/${locale}`,

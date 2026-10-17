@@ -11,6 +11,17 @@
  * Do not ship with placeholders in place.
  */
 
+/**
+ * Launch switch. Until ALLOW_INDEXING=true is set in the hosting environment,
+ * every page tells search engines not to index it.
+ *
+ * Why: before launch the site carries placeholder text under Dr Obeid's name.
+ * If Google indexes that, it becomes the first impression of an entity that
+ * already shares its name with a former Foreign Minister — and first
+ * impressions in a knowledge graph are sticky (docs/10, D2).
+ */
+export const allowIndexing = process.env.ALLOW_INDEXING === 'true';
+
 export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://drjeanobeid.com',
 
