@@ -1,5 +1,5 @@
 import { useTranslations, useLocale } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { LocaleLink as Link } from '@/components/LocaleLink';
 import { site } from '@/lib/site';
 
 /**

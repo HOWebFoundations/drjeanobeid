@@ -64,11 +64,33 @@
       "reasonTest": "[FR] A test my doctor asked for",
       "reasonOther": "[FR] Something else",
       "submit": "[FR] Send request",
-      "privacyNote": "[FR] Please do not describe symptoms here. If you need urgent help, call the Red Cross on 140."
+      "privacyNote": "[FR] Please do not describe symptoms here. If you need urgent help, call the Red Cross on 140.",
+      "sending": "[FR] Sending…",
+      "sentHeading": "[FR] Request received",
+      "sentBody": "[FR] The clinic secretary will call you back to arrange a time. If it's urgent, please call instead.",
+      "failedHeading": "[FR] We couldn't send your request",
+      "failedBody": "[FR] Please call the clinic or send a WhatsApp message instead. You'll reach the secretary directly.",
+      "failedCall": "[FR] Call the clinic",
+      "failedWhatsapp": "[FR] Send a WhatsApp"
     }
   },
   "empty": {
     "heading": "[FR] Content in preparation",
     "body": "[FR] This page is being written and will be reviewed by Dr Obeid before it is published."
+  },
+  "consent": {
+    "label": "[FR] Cookie choice",
+    "body": "[FR] We'd like to use analytics cookies to understand how the site is used. Nothing is set unless you agree.",
+    "more": "[FR] Privacy",
+    "accept": "[FR] Accept",
+    "decline": "[FR] Decline"
+  },
+  "location": {
+    "address": "[FR] Address",
+    "appointments": "[FR] Appointments",
+    "hours": "[FR] Dr Obeid's hours here",
+    "pending": "[FR] To be confirmed",
+    "directions": "[FR] Get directions",
+    "mapAlt": "[FR] Map showing the location of {name}"
   }
 }

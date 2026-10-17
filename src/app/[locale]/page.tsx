@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { HeartHero } from '@/components/heart/HeartHero';
 import { Section } from '@/components/ui/Section';
-import { Link } from '@/i18n/navigation';
+import { LocaleLink as Link } from '@/components/LocaleLink';
 import { site } from '@/lib/site';
 import { listDocs } from '@/lib/content';
 import type { Locale } from '@/i18n/routing';

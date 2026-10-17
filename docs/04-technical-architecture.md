@@ -70,23 +70,51 @@ Supporting decisions: AVIF/WebP through `next/image`; self-hosted fonts with siz
 fallbacks (three scripts, so subset aggressively); the heart's poster image is the LCP
 element.
 
-### Measured, 2026-08-21 — the JS budget is already tight
+### Measured — initial JS per page
 
-The scaffold's home page ships **187 KB gzipped initial JS against the 200 KB budget**, with
-no 3D library, no analytics, no map embed and almost no content. Roughly 13 KB of headroom
-for three things that will each cost more than that.
+| Date | Home | Contact | Location | Note |
+| --- | --- | --- | --- | --- |
+| 2026-08-21 | 187 KB | — | — | First scaffold |
+| 2026-10-17 | **177 KB** | 179 KB | 182 KB | Consent banner added; client i18n runtime removed |
 
-This is a finding, not a footnote. Options, in the order I would take them:
+Gzipped, measured against a production build. Budget: 200 KB.
 
-1. **Map** — do not embed Google Maps. A static map image linking out to directions costs a
-   few KB instead of several hundred, and patients tap through to their own maps app anyway.
-2. **Analytics** — GA4 is the heaviest of the three. Consider Vercel Analytics alone, or
-   load GA4 after interaction rather than on load.
-3. **3D viewer** — already behind a dynamic import and desktop-gated, so it does not count
-   against the mobile initial bundle. Keep it that way; the moment it is statically imported
-   anywhere the budget is gone.
+About 155 KB of that is React and the Next.js runtime, which cannot be removed. Of the rest,
+the biggest controllable item was **next-intl's client provider**: it ships the ICU message
+formatter (~14 KB) to every page, and every next-intl `Link` needs that provider, even when
+rendered from a server component. Nothing on this site translates in the browser, so:
 
-Re-measure with `npm run analyze` before each of these lands.
+- Strings are translated on the server and passed to client components as props.
+- Links resolve their locale prefix on the server (`src/components/LocaleLink.tsx`) and render
+  a plain `next/link`.
+- `NextIntlClientProvider` is removed. **Do not add `useTranslations` to a client component**;
+  doing so needs the provider back and costs the 14 KB again. Pass strings as props instead.
+
+What is left to spend the remaining ~23 KB on, and what not to spend it on:
+
+1. **Map:** a directions link opening the patient's own maps app is built. An optional
+   static image at `public/maps/{slug}.webp` costs a few KB. Never embed Google Maps.
+2. **Analytics:** GA4 loads only after consent, with `lazyOnload`, so it does not count
+   against the initial bundle. Leaving `NEXT_PUBLIC_GA_ID` unset ships no analytics and no
+   cookie banner at all.
+3. **3D viewer:** dynamically imported and desktop-gated, so it never touches the mobile
+   bundle. The moment it is statically imported anywhere, the budget is gone.
+
+Re-measure before each of these lands.
+
+### Language comes from the URL only
+
+`localeDetection: false` and `localeCookie: false` in `src/i18n/routing.ts`. `/` is English,
+`/fr` French, `/ar` Arabic, with no Accept-Language sniffing and no cookie.
+
+With detection on, a visitor whose browser is set to French could never reach the English
+site: clicking "EN" lands on `/`, they're detected as French, and get redirected back to
+`/fr`. The library's own links hide this by setting a cookie; removing them exposed it.
+URL-only is also better for SEO (one URL, one language), sets no cookie, and keeps the root a
+200 with no redirect for every visitor. Search visitors reach the right language via hreflang.
+
+Verified in Chromium as a phone user with a French browser: `/` stays English, switching
+EN → AR → EN works, links keep their prefix, no runtime errors.
 
 ## SEO, local, and the two-location problem
 
@@ -153,6 +181,10 @@ regulatory risk that he — not us — would carry.
 ### Data
 
 - **No health data collected through forms** (this is why the symptom field is a dropdown)
+- **The reason for the visit is emailed, never stored.** The Supabase log keeps name, phone,
+  timestamp and status only (`supabase/migrations/0001_appointment_requests.sql`), with RLS on,
+  no public policies, and a 90-day purge via `pg_cron`. EU region
+- **The WhatsApp alert is a no-parameter template**, so it cannot carry patient data
 - Privacy policy, in all three locales
 - Cookie consent layer — GDPR applies. [Decided] teleconsultation is confirmed and
   explicitly targets diaspora patients, so this is no longer a hedge

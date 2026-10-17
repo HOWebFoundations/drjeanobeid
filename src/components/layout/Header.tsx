@@ -1,11 +1,13 @@
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+import { useLocale, useTranslations } from 'next-intl';
+import type { Locale } from '@/i18n/locales';
+import { LocaleLink as Link } from '@/components/LocaleLink';
 import { Container } from '@/components/ui/Container';
 import { LocaleSwitcher } from './LocaleSwitcher';
 import { site } from '@/lib/site';
 
 export function Header() {
   const t = useTranslations('nav');
+  const locale = useLocale() as Locale;
 
   const links = [
     { href: '/about', label: t('about') },
@@ -38,7 +40,7 @@ export function Header() {
           </ul>
         </nav>
 
-        <LocaleSwitcher />
+        <LocaleSwitcher current={locale} />
       </Container>
     </header>
   );

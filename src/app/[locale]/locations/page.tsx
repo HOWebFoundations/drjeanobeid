@@ -1,6 +1,6 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Section } from '@/components/ui/Section';
-import { Link } from '@/i18n/navigation';
+import { LocaleLink as Link } from '@/components/LocaleLink';
 import { site } from '@/lib/site';
 import { routing } from '@/i18n/routing';
 

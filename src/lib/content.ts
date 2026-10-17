@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import matter from 'gray-matter';
+import { parse as parseYaml } from 'yaml';
 import type { Locale } from '@/i18n/routing';
 
 /**
@@ -36,6 +36,17 @@ export interface Doc {
 
 const root = path.join(process.cwd(), 'content');
 
+/**
+ * Splits `---` YAML frontmatter from the MDX body.
+ * (Replaces gray-matter, whose js-yaml 3 dependency chain carries open
+ * advisories and is no longer maintained.)
+ */
+function splitFrontmatter(raw: string): { data: unknown; content: string } {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!match) return { data: {}, content: raw };
+  return { data: parseYaml(match[1]) ?? {}, content: match[2] };
+}
+
 function dir(locale: Locale, collection: Collection) {
   return path.join(root, locale, collection);
 }
@@ -61,7 +72,7 @@ export async function getDoc(
 ): Promise<Doc | null> {
   try {
     const raw = await fs.readFile(path.join(dir(locale, collection), `${slug}.mdx`), 'utf8');
-    const { data, content } = matter(raw);
+    const { data, content } = splitFrontmatter(raw);
     return { slug, frontmatter: data as DocFrontmatter, body: content };
   } catch {
     return null;

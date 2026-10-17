@@ -96,7 +96,7 @@ and prerenders 49 pages across the three locales.
 
 | Area | State |
 | --- | --- |
-| Routing | EN at root, `/fr`, `/ar`. Verified: root serves 200 with no redirect |
+| Routing | EN at root, `/fr`, `/ar`. Language from the URL only — no detection, no cookie. Root serves 200 with no redirect, for every browser language |
 | RTL | `dir="rtl"` on Arabic, set per locale at layout level. Logical CSS properties throughout |
 | hreflang | All three locales plus `x-default`, with self-referencing canonicals |
 | Design system | Tokens in `src/app/globals.css`. Arterial red reserved for the heart and primary actions |
@@ -104,7 +104,9 @@ and prerenders 49 pages across the three locales.
 | Schema | `Physician` + two `MedicalClinic`, `MedicalCondition`, `MedicalProcedure`, `FAQPage`, `BreadcrumbList` |
 | Heart hero | Poster-as-LCP video loop; interactive viewer behind a pointer + reduced-motion + idle gate |
 | Content | MDX at `content/{locale}/{collection}/{slug}.mdx`, one worked example per collection |
-| Forms | Closed-set validation, no free-text symptom field. Delivery deliberately unwired |
+| Forms | Closed-set validation, honeypot, no free-text field. Email via Resend; reason emailed, never stored; Supabase log of name/phone/status with 90-day purge; WhatsApp alert carries no patient data. **Fails visibly if unconfigured** |
+| Consent | Analytics load only after consent; no banner at all if analytics are off. Accept and Decline weighted equally |
+| Locations | Directions link to the patient's own maps app. Optional static map image. No embed |
 
 ### What is deliberately not built
 
@@ -112,17 +114,15 @@ and prerenders 49 pages across the three locales.
   Fiber is not installed. There is no GLB to render until the model is sourced in Week 1,
   and installing a 3D stack before there is geometry is weight with nothing behind it. The
   dynamic-import boundary around it is real and working.
-- **Form delivery.** Resend, Supabase and the WhatsApp notification are stubbed. Wiring them
-  to placeholder credentials would produce a form that silently drops patient requests —
-  worse than one that is visibly not live yet.
+- **Credentials.** Form delivery is implemented but needs the clinic's real email, a
+  verified sending domain in Resend, and optionally Supabase and WhatsApp. Until then the
+  form tells patients to call or WhatsApp, rather than pretending to send. See `.env.example`.
 - **Content.** The two `.mdx` files are structural scaffolds carrying no medical claims.
   Real copy comes from the interviews in `docs/08` and needs Dr. Obeid's sign-off.
 
-### ⚠️ Performance budget is already tight
+### Performance budget
 
-Measured on the home page: **187 KB gzipped initial JS against a 200 KB budget.**
-
-That is with no 3D library, no analytics, no map embed, and almost no content. Those three
-additions will breach it. Before any of them ships, run `npm run analyze` and decide what
-comes out — the budget is pass/fail, not aspirational, because the whole mobile conversion
-path depends on it.
+**177 KB gzipped initial JS on the home page, against a 200 KB budget.** About 155 KB is React
+and Next.js. The rules that keep it under budget are in `docs/04-technical-architecture.md`,
+the main one being: **never call `useTranslations` in a client component** — pass translated
+strings as props. Run `npm run analyze` before adding analytics, maps or 3D.

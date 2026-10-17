@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui/Container';
 import { AppointmentForm } from '@/components/AppointmentForm';
+import { FORM_LABEL_KEYS, type FormLabels } from '@/components/appointment-form-labels';
 import { routing } from '@/i18n/routing';
 import { site } from '@/lib/site';
 
@@ -16,6 +17,8 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations('contact');
+  const tf = await getTranslations('contact.form');
+  const formLabels = Object.fromEntries(FORM_LABEL_KEYS.map((k) => [k, tf(k)])) as FormLabels;
 
   return (
     <Container className="py-10">
@@ -23,7 +26,7 @@ export default async function ContactPage({
       <p className="mt-4 max-w-prose text-ink-800">{t('intro')}</p>
 
       <div className="mt-8 grid gap-10 md:grid-cols-2">
-        <AppointmentForm />
+        <AppointmentForm labels={formLabels} locale={locale as 'en' | 'fr' | 'ar'} />
 
         <div className="text-sm">
           <ul className="space-y-4">

@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import { hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Source_Serif_4, Inter, IBM_Plex_Sans_Arabic } from 'next/font/google';
 
-import { routing, directionOf, type Locale } from '@/i18n/routing';
+import { routing, directionOf, localizedPath, type Locale } from '@/i18n/routing';
 import { site } from '@/lib/site';
 import { physicianSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/JsonLd';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StickyContactBar } from '@/components/layout/StickyContactBar';
+import { ConsentAnalytics } from '@/components/ConsentAnalytics';
 import '../globals.css';
 
 // Self-hosted at build time, with size-adjusted fallbacks (docs/04).
@@ -79,6 +80,15 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const dir = directionOf(locale as Locale);
+  const tc = await getTranslations('consent');
+  const consentLabels = {
+    label: tc('label'),
+    body: tc('body'),
+    more: tc('more'),
+    accept: tc('accept'),
+    decline: tc('decline'),
+    privacyHref: localizedPath(locale, '/privacy'),
+  };
 
   return (
     <html
@@ -87,7 +97,14 @@ export default async function LocaleLayout({
       className={`${heading.variable} ${body.variable} ${arabic.variable}`}
     >
       <body>
-        <NextIntlClientProvider>
+        {/*
+          No NextIntlClientProvider, deliberately. Nothing translates in the
+          browser: strings are translated on the server and passed down as
+          props, and links resolve their locale prefix on the server
+          (src/components/LocaleLink.tsx). The provider would ship the ICU
+          message formatter (~14 KB gzipped) to every page for nothing.
+        */}
+        <>
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-2 focus:rounded focus:bg-ink-900 focus:px-4 focus:py-2 focus:text-surface-50"
@@ -100,7 +117,8 @@ export default async function LocaleLayout({
           </main>
           <Footer />
           <StickyContactBar />
-        </NextIntlClientProvider>
+          <ConsentAnalytics labels={consentLabels} />
+        </>
         <JsonLd data={physicianSchema(locale as Locale)} />
       </body>
     </html>

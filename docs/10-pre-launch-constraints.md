@@ -106,7 +106,7 @@ defensible almost everywhere. Do not widen it to "consultations" without an answ
 
 ## C · Data protection
 
-### C1 · The appointment form probably touches special-category data 🔴
+### C1 · The appointment form probably touches special-category data — ✅ BUILT
 
 We removed the free-text symptom field, which was the right call. But the remaining payload
 is still **name + phone + reason for visit**, and "second opinion" or "a test my doctor asked
@@ -125,7 +125,7 @@ Mitigations, cheapest first:
 - **Row-level security on by default.** A misconfigured Supabase table is the most common way
   small sites leak personal data.
 
-### C2 · The WhatsApp notification sends patient data to Meta
+### C2 · The WhatsApp notification sends patient data to Meta — ✅ BUILT
 
 Relaying a patient's name and phone number through WhatsApp makes Meta a processor of that
 data. Convenient for the secretary, and a real question if GDPR applies.
@@ -134,7 +134,7 @@ data. Convenient for the secretary, and a real question if GDPR applies.
 only *"a new appointment request has arrived, check email"* — carrying no patient data at
 all. That keeps the speed and removes the problem.
 
-### C3 · Consent must gate the scripts, not just display a banner
+### C3 · Consent must gate the scripts, not just display a banner — ✅ BUILT
 
 The common implementation error: load GA4, then show a cookie banner. Under GDPR the
 non-essential scripts must not fire until consent is given.
@@ -151,6 +151,11 @@ site.
 **Action:** ask who took them and on what terms. If unclear, a short top-up shoot with a
 clean licence may be cheaper than chasing a release. Any identifiable patient needs separate
 written consent regardless.
+
+> **Built (2026-10-17):** C1–C3 are implemented in `src/app/api/appointment-request/route.ts`,
+> `supabase/migrations/0001_appointment_requests.sql` and `src/components/ConsentAnalytics.tsx`.
+> Also fixed: with no email configured, the form used to report success while dropping the
+> request. It now fails visibly and offers call and WhatsApp instead. Verified in Chromium.
 
 ---
 
@@ -199,11 +204,12 @@ the site. This is not a technical risk — it is the secretary's workload.
 monitor it. If she cannot commit to one, remove the form and lead with call and WhatsApp only.
 That would be a *better* site, not a lesser one.
 
-### D4 · Performance budget is already at 94%
+### D4 · Performance budget — ✅ HEADROOM RECOVERED
 
-187 KB gzipped initial JS against a 200 KB budget, with no analytics, no map and no 3D. See
-`04-technical-architecture.md` for the recommended order of attack — the static map image
-instead of an embed is the cheapest win by a wide margin.
+Was 187 KB of 200. Now **177 KB** on the home page, with the consent banner added, after
+removing next-intl's client runtime. A directions link replaces any map embed, and analytics
+load only after consent. Details and the rules for keeping it that way are in
+`04-technical-architecture.md`.
 
 ### D5 · Arabic quality is a trust risk, not a translation line item
 

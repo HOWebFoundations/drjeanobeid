@@ -1,36 +1,46 @@
 'use client';
 
-import { useLocale } from 'next-intl';
-import { usePathname, useRouter } from '@/i18n/navigation';
-import { routing } from '@/i18n/routing';
+import NextLink from 'next/link';
+import { usePathname } from 'next/navigation';
+import { LOCALES, localizedPath, unlocalizedPath, type Locale } from '@/i18n/locales';
 
-const labels: Record<string, string> = {
+const labels: Record<Locale, string> = {
   en: 'EN',
   fr: 'FR',
   ar: 'ع',
 };
 
-export function LocaleSwitcher() {
-  const locale = useLocale();
-  const pathname = usePathname();
-  const router = useRouter();
+const names: Record<Locale, string> = {
+  en: 'English',
+  fr: 'Français',
+  ar: 'العربية',
+};
+
+/**
+ * Switches language by swapping the URL prefix on the current page. The URL is
+ * the only source of truth for language (see src/i18n/routing.ts), so these are
+ * plain links: no cookie, no client i18n runtime.
+ */
+export function LocaleSwitcher({ current }: { current: Locale }) {
+  const base = unlocalizedPath(usePathname() ?? '/');
 
   return (
-    <div className="flex items-center gap-1" role="group" aria-label="Language">
-      {routing.locales.map((l) => (
-        <button
+    <nav aria-label="Language" className="flex items-center gap-1">
+      {LOCALES.map((l) => (
+        <NextLink
           key={l}
-          type="button"
+          href={localizedPath(l, base)}
+          hrefLang={l}
           lang={l}
-          aria-current={l === locale ? 'true' : undefined}
-          onClick={() => router.replace(pathname, { locale: l })}
-          className={`tap-target rounded px-2 text-sm ${
-            l === locale ? 'font-semibold text-ink-950' : 'text-ink-600'
+          aria-label={names[l]}
+          aria-current={l === current ? 'true' : undefined}
+          className={`tap-target inline-flex items-center justify-center rounded px-2 text-sm ${
+            l === current ? 'font-semibold text-ink-950' : 'text-ink-600'
           }`}
         >
           {labels[l]}
-        </button>
+        </NextLink>
       ))}
-    </div>
+    </nav>
   );
 }
