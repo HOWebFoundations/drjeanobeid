@@ -8,10 +8,6 @@ const nextConfig: NextConfig = {
     // Budget: AVIF/WebP only. See docs/04-technical-architecture.md
     formats: ['image/avif', 'image/webp'],
   },
-  experimental: {
-    // Keeps the 3D chunk out of the initial bundle.
-    optimizePackageImports: ['@react-three/drei'],
-  },
 };
 
 export default withNextIntl(nextConfig);

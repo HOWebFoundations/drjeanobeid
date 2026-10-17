@@ -9,7 +9,6 @@
 | Hosting | Vercel | |
 | i18n | `next-intl` | EN at root, `/fr`, `/ar`. RTL, hreflang |
 | Content | **MDX only** | [Decided] no retainer, so no CMS |
-| 3D | React Three Fiber + drei | Desktop only, dynamic import |
 | Forms | Route handler → Resend + Supabase | |
 | Analytics | GA4, Search Console, Vercel Speed Insights | |
 
@@ -90,15 +89,13 @@ rendered from a server component. Nothing on this site translates in the browser
 - `NextIntlClientProvider` is removed. **Do not add `useTranslations` to a client component**;
   doing so needs the provider back and costs the 14 KB again. Pass strings as props instead.
 
-What is left to spend the remaining ~23 KB on, and what not to spend it on:
+What the remaining ~23 KB can go on, and what it can't:
 
 1. **Map:** a directions link opening the patient's own maps app is built. An optional
    static image at `public/maps/{slug}.webp` costs a few KB. Never embed Google Maps.
 2. **Analytics:** GA4 loads only after consent, with `lazyOnload`, so it does not count
    against the initial bundle. Leaving `NEXT_PUBLIC_GA_ID` unset ships no analytics and no
    cookie banner at all.
-3. **3D viewer:** dynamically imported and desktop-gated, so it never touches the mobile
-   bundle. The moment it is statically imported anywhere, the budget is gone.
 
 Re-measure before each of these lands.
 

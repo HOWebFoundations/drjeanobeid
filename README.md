@@ -32,6 +32,7 @@ the heart, it is optimising for the wrong thing.
 | Teleconsultation | **Yes** — diaspora and remote patients | Page stays; GDPR clearly applies |
 | Editorial voice | **Tuned per locale**, substance identical | Transcreation, not translation. Review model preserved |
 | Heart asset | Higgsfield dead → **licensed/purchased anatomical model** | AI-generation risk removed entirely |
+| Heart format | **Rotating video only** — no interactive 3D | Any model licence works; no 3D code |
 | CMS | **No retainer → MDX only** | No Sanity. Articles front-loaded, not dripped |
 | Advertising rules | **Write conservatively, don't ask** | Strictest reading: no superlatives, testimonials, comparisons, pricing |
 | Existing site | Domain owned, no real site | **No redirect work** |
@@ -53,7 +54,7 @@ the heart, it is optimising for the wrong thing.
 | [`docs/09-client-questionnaire.md`](docs/09-client-questionnaire.md) | Self-serve form for the facts that don't need a conversation |
 | [`docs/10-pre-launch-constraints.md`](docs/10-pre-launch-constraints.md) | What can stop the launch or cause real harm — read before building further |
 | [`docs/11-written-followup-template.md`](docs/11-written-followup-template.md) | The template he fills in after Session 2 for the five conditions not covered live |
-| [`docs/12-heart-model-shortlist.md`](docs/12-heart-model-shortlist.md) | Licensed heart models, and why the licence decides whether a 3D viewer is possible |
+| [`docs/12-heart-model-shortlist.md`](docs/12-heart-model-shortlist.md) | Licensed heart models to choose from for the rotating video |
 
 ## Confidence tagging
 
@@ -110,7 +111,7 @@ and prerenders 49 pages across the three locales.
 | Design system | Tokens in `src/app/globals.css`. Arterial red reserved for the heart and primary actions |
 | Entity facts | `src/lib/site.ts` — single source of truth for NAP. Import it; never duplicate it |
 | Schema | `Physician` + two `MedicalClinic`, `MedicalCondition`, `MedicalProcedure`, `FAQPage`, `BreadcrumbList` |
-| Heart hero | Poster-as-LCP video loop; interactive viewer behind a pointer + reduced-motion + idle gate |
+| Heart hero | Rotating video loop with the poster as the first thing to paint. No interactive 3D, by decision |
 | Content | MDX at `content/{locale}/{collection}/{slug}.mdx`, one worked example per collection |
 | Forms | Closed-set validation, honeypot, no free-text field. Email via Resend; reason emailed, never stored; Supabase log of name/phone/status with 90-day purge; WhatsApp alert carries no patient data. **Fails visibly if unconfigured** |
 | Consent | Analytics load only after consent; no banner at all if analytics are off. Accept and Decline weighted equally |
@@ -118,10 +119,6 @@ and prerenders 49 pages across the three locales.
 
 ### What is deliberately not built
 
-- **The 3D viewer.** `src/components/heart/HeartViewer.tsx` returns `null` and React Three
-  Fiber is not installed. There is no GLB to render until the model is sourced in Week 1,
-  and installing a 3D stack before there is geometry is weight with nothing behind it. The
-  dynamic-import boundary around it is real and working.
 - **Credentials.** Form delivery is implemented but needs the clinic's real email, a
   verified sending domain in Resend, and optionally Supabase and WhatsApp. Until then the
   form tells patients to call or WhatsApp, rather than pretending to send. See `.env.example`.
@@ -133,4 +130,4 @@ and prerenders 49 pages across the three locales.
 **177 KB gzipped initial JS on the home page, against a 200 KB budget.** About 155 KB is React
 and Next.js. The rules that keep it under budget are in `docs/04-technical-architecture.md`,
 the main one being: **never call `useTranslations` in a client component** — pass translated
-strings as props. Run `npm run analyze` before adding analytics, maps or 3D.
+strings as props. Run `npm run analyze` before adding analytics or maps.

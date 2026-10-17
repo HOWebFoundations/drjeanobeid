@@ -1,17 +1,14 @@
 import { getTranslations } from 'next-intl/server';
 import { Container } from '@/components/ui/Container';
 import { ButtonLink } from '@/components/ui/Button';
-import { HeartViewerLoader } from './HeartViewerLoader';
 
 /**
  * The signature of the site, not its strategy.
  *
- * Output A (this component) is a pre-rendered turntable loop served to every
- * device. The poster is the LCP image, which is what keeps the hero fast on an
- * uneven mobile connection. Reduced-motion users get the poster only.
- *
- * Output B (HeartViewerLoader) is the interactive viewer, desktop pointer
- * devices only, dynamically imported on idle. See docs/03-heart-asset.md.
+ * A pre-rendered rotating loop, served to every device. The poster is the LCP
+ * image, which is what keeps the hero fast on an uneven mobile connection.
+ * Reduced-motion users get the poster only. There is no interactive 3D viewer:
+ * decided 2026-10-17. See docs/03-heart-asset.md.
  */
 export async function HeartHero() {
   const t = await getTranslations('home.hero');
@@ -60,8 +57,6 @@ export async function HeartHero() {
               height={512}
               className="hidden h-full w-full rounded-2xl object-cover motion-reduce:block"
             />
-
-            <HeartViewerLoader />
           </figure>
         </div>
       </Container>

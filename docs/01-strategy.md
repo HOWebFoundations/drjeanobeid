@@ -111,7 +111,7 @@ timeline.
 A general cardiologist competes with every other name on Vezeeta's short list. A cardiologist
 who performs coronary angiography and angioplasty answers a different, higher-intent
 question — and the procedure queries behind it are commercially weighted, poorly served by
-the directories, and directly connected to the condition pages through the heart hotspots.
+the directories, and directly connected to the coronary artery disease page.
 
 The coronary artery disease page, the angiography page and the angioplasty page should be
 built as a deliberate cluster with strong internal linking. That cluster is the highest-value

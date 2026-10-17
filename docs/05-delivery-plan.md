@@ -50,7 +50,6 @@ two downstream translations rather than being drafted alongside them.
 - Forms, schema (including two-location `MedicalClinic`), analytics
 - Heart video integrated
 - **Medical pages go to Dr. Obeid progressively, from Week 5** — not batched into one block
-- Desktop 3D viewer built last, as the most cuttable item
 
 ## Weeks 8–9 — Transcreation
 

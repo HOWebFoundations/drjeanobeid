@@ -2,51 +2,18 @@
 
 ## Decision
 
-**One GLB source asset, two outputs.**
+**One rotating video of the heart, on the home page, for every device.** [Decided 2026-10-17]
 
-| Output | What | Who gets it |
-| --- | --- | --- |
-| **A** | Pre-rendered turntable video loop | Every device, including mobile |
-| **B** | Interactive React Three Fiber viewer | Desktop pointer devices only, loaded after the page is interactive |
+There is no interactive or spin-it-yourself 3D version. It was in the original plan as a
+desktop extra; it has been dropped. That also removes the only licensing complication: every
+model licence we checked allows rendered video (`12-heart-model-shortlist.md`).
 
-### Why not a real-time 3D hero by default
+### Why a video rather than live 3D
 
-[Likely] a real-time 3D hero is the single largest threat to a site whose visitors mostly
-arrive on phones over uneven Lebanese mobile networks. A hero that stalls on a weak
-connection loses the patient to Vezeeta before the page paints. Pre-rendering turns the
-delivery cost into a video file and freezes the anatomy at a frame we have reviewed.
-
-### ⚠️ Licence constraint on Output B — decision pending
-
-Research in `12-heart-model-shortlist.md` found that **TurboSquid, CGTrader and Sketchfab
-Store licences all forbid sending the model file to the browser**, which is what a real-time
-viewer does. They allow rendered video and images, so Output A is unaffected.
-
-So Output B as specified is only possible with an openly licensed model (Z-Anatomy, CC BY-SA)
-or a specially negotiated licence (e.g. SciePro).
-
-**Recommended alternative:** keep the hotspots, the thing that justifies Output B, as real
-buttons over the rendered poster frame, with an optional drag-to-rotate built from a 90-frame
-image sequence. Every licence allows it, it works on phones as well as desktop, and it costs
-a few KB instead of a 3D library. Full comparison in `12`.
-
-**HOWF to decide** before the model is bought, since the decision determines which models are
-eligible.
-
-### What justifies the interactive version at all
-
-The **hotspots**. Four to six, each linking into a condition page:
-
-| Hotspot | Links to |
-| --- | --- |
-| Coronaries | Coronary artery disease |
-| Aorta | Hypertension |
-| Left ventricle | Heart failure |
-| Valves | Valve disease |
-| Atria | Arrhythmia and atrial fibrillation |
-
-Without the hotspots the 3D viewer is decoration and should be cut. With them it is
-navigation — an anatomically-indexed entry point into the SEO content.
+[Likely] live 3D is the single largest threat to a site whose visitors mostly arrive on
+phones over uneven Lebanese mobile networks. A hero that stalls on a weak connection loses the
+patient to Vezeeta before the page paints. A pre-rendered video costs a video file, and it
+freezes the anatomy at frames the doctor has reviewed.
 
 ---
 
@@ -101,16 +68,14 @@ His checklist — the things a cardiologist will look at first:
 
 Runs in parallel with the design and copy weeks.
 
-### Step 1 — Shortlist and licence check
-Three or four candidates, licence terms verified for commercial web use, doctor picks one.
+### Step 1 — Shortlist
+Three or four candidates (see `12`); the doctor picks one. Any standard licence covers video.
 
 ### Step 2 — Purchase and Blender cleanup
 - Decimate to ~150k triangles
 - Fix normals
 - Bake textures at 2K
-- Export GLB
-- Compress with `gltf-transform` — meshopt or Draco, KTX2 textures
-- **Target: under 3 MB total**
+- Set up the lighting and camera for the turntable
 
 ### Step 3 — Doctor confirmation
 Annotated turntable frames of the cleaned model. This is now a **verification** step rather
@@ -120,14 +85,10 @@ If it does not, return to the shortlist rather than trying to fix anatomy in Ble
 ### Step 4 — Turntable render
 Blender. 8–10 seconds, 30 fps, 1080² and 720². Encode to WebM and MP4, with a WebP poster.
 
-Optionally a 90-frame WebP sprite sequence for scroll-scrubbing — decide only after the
-performance budget is measured, not before.
-
 ### Step 5 — Integration
 - Muted, looping, `playsinline` video
 - **The poster is the LCP image** — this is what keeps the hero fast
 - Reduced-motion users get the poster only, never the video
-- Desktop pointer devices swap in the R3F viewer on idle, via dynamic import
 
 ### Step 6 — Derive the line mark
 Extract a simplified single-colour line mark from the model for the favicon, OG image and
@@ -137,14 +98,10 @@ brand motif. This is what makes the asset pay back beyond the hero.
 
 ## Acceptance criteria
 
-- [ ] Licence verified **for the specific output**: rendered video and frames are allowed by
-      most licences; a browser-delivered 3D model is not (see `12-heart-model-shortlist.md`).
-      Attribution recorded if required
+- [ ] Licence covers website video (standard on every marketplace checked); attribution
+      recorded if required
 - [ ] Doctor sign-off on anatomy
 - [ ] Loop is seamless
 - [ ] Poster under 100 KB
-- [ ] 3D chunk absent from the initial bundle (verify in the bundle analyser, not by eye)
-- [ ] 60 fps on a mid-range laptop
-- [ ] Hotspots keyboard-accessible
 - [ ] Meaningful alt text, in all three locales
 - [ ] Hero does not regress the LCP budget on throttled 4G

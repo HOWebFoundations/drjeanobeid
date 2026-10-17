@@ -5,7 +5,12 @@ end. **Prices and listing details change; re-check every listing before buying.*
 
 ---
 
-## The finding that changes the plan
+> **Update 2026-10-17: the interactive 3D viewer has been dropped.** The heart is a rotating
+> video only, which every licence below allows. The licence analysis that follows is kept as
+> the record; it no longer constrains the choice. **Any route works — pick on accuracy, looks
+> and price.**
+
+## The licence finding (no longer a constraint)
 
 **No standard marketplace licence allows the interactive 3D viewer as designed.**
 
@@ -25,36 +30,6 @@ terms, and obfuscating it to try to would be gaming the licence, not complying w
 video. Those are "Creations" or "Incorporated Products". So Output A, the pre-rendered loop,
 works with any model below. Output B does not, unless the model is openly licensed or the
 licence is specially negotiated.
-
-## Recommendation: keep the hotspots, drop the real-time 3D
-
-The strategy already says the hotspots are the *only* reason for Output B — without them the
-3D viewer is decoration. The hotspots don't need real-time 3D:
-
-- **Hotspots on the pre-rendered asset.** Real `<button>` elements positioned over the poster
-  frame, linking to the condition pages (coronaries → CAD, aorta → hypertension, and so on).
-- **Optional drag-to-rotate, using images.** A 90-frame WebP sequence from the Blender
-  turntable, scrubbed by dragging. It feels like rotating the heart, but it is a stack of
-  images, which every licence allows. This was already an optional item in `03`.
-
-Compared with a real-time viewer this is:
-
-| | Real-time 3D (old Output B) | Hotspots on rendered frames |
-| --- | --- | --- |
-| Licence | Open or negotiated licence only | Any model on this list |
-| JavaScript | React Three Fiber + drei + loader | A few KB |
-| Works on phones | Desktop only, by design | Everywhere |
-| Keyboard access | Needs a separate overlay | Native buttons, accessible by default |
-| Anatomy | Any angle, including unreviewed ones | Only angles he has signed off |
-
-What is lost: free orbiting at any angle and zoom. For a patient-facing cardiology site, that
-loss is small.
-
-This changes a decision HOWF made in the original plan, so it is **a recommendation, not a
-change**. `03-heart-asset.md` now records the licence constraint and points here; Output B
-stays as specified until HOWF decides.
-
----
 
 ## The routes
 
@@ -120,16 +95,16 @@ the Blender cleanup and the doctor's review, to check vessel routing.
 
 ---
 
-## Decision needed from HOWF, then the doctor
+## Choosing
 
-**HOWF decides the route** — it is a budget and architecture call:
+With video only, the choice is about accuracy, looks and price:
 
-1. Hotspots on rendered frames instead of a real-time viewer? (Recommended.)
-2. Then: Route C (cheapest, likeliest), B (most credible), or A (free, permits real-time 3D,
-   most work)?
+- **Route C, a marketplace model (~$300):** likeliest. Check the listing in a browser first.
+- **Route B, SciePro:** most credible to a cardiologist; price on request.
+- **Route A, Z-Anatomy:** free, but needs the most cleanup and an attribution credit.
 
-**Then the doctor picks the model** within that route, from the listings' preview images,
-against the checklist in `03-heart-asset.md`. Five minutes of his time.
+Dr. Obeid picks from the listings' preview images, against the checklist in
+`03-heart-asset.md`. Five minutes of his time.
 
 ## Sources
 
