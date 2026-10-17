@@ -15,12 +15,12 @@
 | 9 | Advertising rules | **Write conservatively, don't ask.** Strictest reading; no review solicitation |
 | 10 | Retainer | **No** → MDX only, no Sanity, articles front-loaded, real handover |
 | 11 | Existing site | **Domain owned, no real site** → no redirect work |
-| 12 | Photography | **Existing professional photos** → assess coverage, top-up shoot if gaps |
+| 12 | Photography | **Existing professional photos** → assess coverage. No shooting inside either hospital; any top-up is off site |
 | 13 | Phone routing | **One secretary, one number for both hospitals** → simple sticky bar; hours differentiate the GBP listings |
 | 14 | Root locale | **English at root**, `/fr` and `/ar`, `x-default` on the root |
 | 15 | Teleconsultation | **Yes** — diaspora and remote patients. Page stays, GDPR confirmed |
 | 16 | Patient mix | **Genuinely different between the two hospitals** → transcreation per locale, clinical substance fixed |
-| 33 | Hospital permission to name locations on the site | **Agreed** (2026-10-17). Location pages and `MedicalClinic` schema unblocked. GBP-at-address and on-site photography not covered — see `10-pre-launch-constraints.md` A1 |
+| 33 | Hospital permission | **Agreed verbally by both** (2026-10-17): locations on the site ✅, GBP listings at both addresses ✅, photography on premises ❌. One-line written confirmation from Karantina to be on file before launch |
 
 ## Closed by independent verification
 

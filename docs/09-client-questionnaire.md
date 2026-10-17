@@ -153,7 +153,7 @@ One directory lists an affiliation with **Haddad / Sœurs du Rosaire Hospital**.
 | Do you have professional photographs? | |
 | Who took them, and do you have the original files? | |
 | Any of you at work, or in the clinic? | |
-| Would you be willing to sit for a short additional shoot if there are gaps? | |
+| Would you be willing to sit for a short additional portrait session, away from the hospitals, if there are gaps? | |
 | Any photograph you would not want used? | |
 
 *Please attach whatever exists, even if you think it's unsuitable. We'd rather assess it than

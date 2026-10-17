@@ -138,9 +138,14 @@ coverage.** [Likely] there is a good portrait but nothing of the clinic settings
 equipment — that is the usual pattern — in which case a short top-up shoot fills the gaps
 far more cheaply than a full half-day.
 
+[Decided] **no photography inside either hospital** — the hospitals' agreement covers the
+locations and the map listings, not filming on their premises.
+
 What the site needs, in priority order: a warm eye-contact portrait for the home hero
-region, a working-at-the-equipment shot for credibility, an environment shot per location
-so the two location pages are visually distinct, and one usable frame for the OG image.
+region, and one usable frame for the OG image. A working-at-the-equipment shot would help
+but is only possible from existing files or off site. The two location pages are told apart
+by their session hours, department and access notes rather than interior photos — which is
+what a patient trying to find the room needs anyway.
 No stock photography of anonymous doctors — it actively damages trust on a personal
 practice site.
 

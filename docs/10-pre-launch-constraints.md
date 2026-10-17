@@ -11,49 +11,30 @@ we do not get to make the call and tell him afterwards.
 
 ## A · Can stop the launch
 
-### A1 · Hospital permission to use their names — ✅ PARTIALLY CLEARED
+### A1 · Hospital permission — ✅ CLEARED, one follow-up
 
-> **Update 2026-10-17.** Agreement obtained to **put the locations on the website**. That
-> covers permission 1 below: naming both hospitals in copy, the two location pages, and the
-> `MedicalClinic` schema. The location pages are unblocked and can be built.
->
-> **Permissions 2 and 3 do not follow from it** and are still open. Listing a business pin at
-> someone else's address, and photographing inside a working hospital, are different asks
-> from being named as an affiliated consultant — and a governmental hospital in particular
-> may treat them differently. Do not assume the agreement stretches; see the questions at the
-> end of this section.
+Agreed with both hospitals (2026-10-17):
 
-The site names **Hôpital Libanais Geitaoui – CHU** and the **Governmental Hospital of Beirut
-Quarantine** throughout — in copy, in `MedicalClinic` schema, on two location pages, and in
-two Google Business Profile listings pinned at their addresses.
+| Permission | Status |
+| --- | --- |
+| Naming both hospitals on the site — copy, location pages, `MedicalClinic` schema | ✅ Agreed |
+| Google Business Profile listing pinned at each hospital's address | ✅ Agreed |
+| Photography on hospital premises | ❌ **Not permitted** |
 
-Three separate permissions may be needed, and nobody has asked for any of them:
+**Follow-up: the agreement is verbal from both.** That is normal and fine for Geitaoui. For
+the **governmental hospital at Karantina**, get a one-line written confirmation before
+launch — an email from the administration is enough. Staff change, and the site and its map
+pin will outlast whoever said yes. Not urgent; it should simply exist by Week 11. He asks,
+not us.
 
-1. **Using the hospital name and any mark** on a commercial personal website.
-2. **Creating a GBP listing at their address.** A practitioner listing inside a hospital is
-   permitted by Google, but the hospital may have its own view, particularly the
-   governmental one.
-3. **Photography taken on hospital premises** — clinical environments, equipment, corridors.
+**What "no photography" changes:**
 
-[Guessing] a private university hospital will be relaxed about a consultant listing his
-affiliation, and a governmental hospital may have a formal process or a flat policy against
-staff using its name commercially. Either way this is a question for him to put to each
-hospital's administration, early, because a refusal from Karantina after the location page
-is built, translated and reviewed wastes three weeks of work across three locales.
-
-**Still to confirm:**
-
-- **Does the agreement cover a Google Business Profile listing pinned at each address?**
-  This is the one that matters most for timing — GBP verification is the longest external
-  lead time in the project (D1) and should start in Week 2.
-- **Does it cover photography on the premises?** Relevant only if the existing photo set has
-  gaps that need a top-up shoot.
-- **Is it in writing, and from both hospitals separately?** A verbal yes from a department
-  head is normal practice and usually fine for a private hospital. For the **governmental**
-  hospital at Karantina, get something written — personnel change, and the site will outlast
-  whoever said yes.
-
-Each remaining ask goes from him, not from us and not by email from an agency.
+- No interior or equipment shots at either hospital. The location pages carry the map, session
+  hours, department, parking and access notes instead — which is what a patient finding the
+  room needs anyway.
+- The working-at-the-equipment shot moves off site, or drops. A good portrait plus clear
+  credentials does the trust work without it.
+- **It may affect GBP verification — see D1.**
 
 ### A2 · Domain control 🔴
 
@@ -182,8 +163,23 @@ likely to need a video call or postal verification, may be rejected on first att
 take weeks. Distinct session hours and department-level addresses are what make the two
 listings legitimate rather than duplicates.
 
-**Action:** begin verification in Week 2, not Week 11. It is the longest-lead external
-dependency in the project and it does not depend on the site being finished.
+**Action:** both hospitals have agreed to the listings, so **start as soon as the
+questionnaire comes back.** Verification needs the department or floor and the session hours
+for each hospital (questionnaire sections B and C) — those facts, not the site, are what it
+waits on.
+
+**Watch for a conflict with the no-photography rule.** [Likely] Google's video verification
+asks you to film the signage, the room and the workspace to prove the business is really
+there. That video is never published, but it is still filming inside the hospital. Two ways
+through:
+
+1. He asks whether a private verification video falls under the no-photography rule. It
+   reasonably might not, since nothing is published — but ask, don't assume.
+2. If it is not allowed, ask Google for **postcard or phone verification** instead, where
+   offered. A postcard sent to a hospital address has to find its way through the mail room
+   to him, so tell the department secretary to expect it.
+
+Raise this before starting, not when Google asks for the video.
 
 ### D2 · The namesake problem compounds if the entity signals launch late
 

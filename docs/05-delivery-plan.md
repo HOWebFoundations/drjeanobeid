@@ -20,6 +20,11 @@ before Week 1 closes.
 - **Source the Arabic medical translator now**, not in Week 8. [Likely] the hardest supplier
   in the project to find at short notice, and Weeks 8–9 depend entirely on having one
 - Establish which locale leads for each hospital's audience — input to the transcreation brief
+- **Start Google Business Profile verification for both hospitals** as soon as the
+  questionnaire returns the department and session hours. Both hospitals have agreed to the
+  listings. Settle first whether a private verification video is allowed under the
+  no-photography rule, or go straight to postcard or phone verification
+  (`10-pre-launch-constraints.md` D1)
 
 **Gate: scope signed, remaining Diligence questions closed.**
 
@@ -31,7 +36,8 @@ before Week 1 closes.
   anchor conditions and both interventional procedures live; the remaining five conditions
   come from the written follow-up template
 - Design system + four key screens: home, condition, location, contact
-- Photography gap assessment → book a top-up shoot if needed
+- Photography gap assessment from existing files. **No shoots inside either hospital** — any
+  top-up is an off-site portrait session
 - Heart model purchased, Blender cleanup, doctor confirmation
 
 An extra week versus the original plan, because English copy is now on the critical path for
@@ -80,7 +86,8 @@ follow with AR two to three weeks later — not to skip the drift check.
 
 - DNS cut over
 - Sitemap submitted, Search Console verified per locale
-- **Both GBP listings** built out and pointed at the site, with distinct session hours and
+- Written confirmation from Karantina's administration on file (verbal agreement is in hand)
+- **Both GBP listings** — verified weeks earlier — pointed at the site, with distinct session hours and
   department-level addresses (they share a phone number, so hours do the differentiating —
   allow time for a possible manual verification)
 - Directory profiles updated with matching NAP
